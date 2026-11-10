@@ -1,0 +1,17 @@
+# Core
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+tqdm
+pyyaml
+jupyter
+kaggle
+
+# Chemistry / mass spectrometry
+rdkit
+matchms
+
+# Deep learning
+torch

@@ -1,0 +1,43 @@
+# Data & large artifacts
+data/raw/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+*.zip
+*.parquet
+*.h5
+*.hdf5
+*.mgf
+*.msp
+*.mzML
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.joblib
+*.npy
+*.npz
+submissions/files/*
+!submissions/files/.gitkeep
+checkpoints/
+wandb/
+mlruns/
+lightning_logs/
+
+# Kaggle credentials
+kaggle.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+.env
