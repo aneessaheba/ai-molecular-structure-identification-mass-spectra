@@ -1,0 +1,26 @@
+{
+ "model": "analog-enum",
+ "mrr": 0.2380762716815348,
+ "top1": 0.164,
+ "top10": 0.4,
+ "top25": 0.456,
+ "n_molecules": 250,
+ "mean_products": 30.884,
+ "valid_rate": 1.0,
+ "in_mass_rate": 0.9992079835260573,
+ "recall_generated": 0.508,
+ "true_by_mod": {
+  "deglycosylation": 31,
+  "demethylation": 28,
+  "methylation": 23,
+  "hydrogenation": 15,
+  "dehydrogenation": 13,
+  "glycosylation": 11,
+  "hydroxylation": 6
+ },
+ "sec_per_molecule": 0.03959623527526855,
+ "hide_true": true,
+ "gen_weight": 1.0,
+ "analogs_per_mod": 3,
+ "limit": null
+}
