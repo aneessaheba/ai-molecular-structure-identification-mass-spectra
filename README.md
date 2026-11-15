@@ -4,6 +4,26 @@
 
 Kaggle competition: https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra
 
+## Deadlines
+| Due | What | Where |
+|---|---|---|
+| **Tue Dec 1, 3:00 PM** | **Group Project Report** (120 pts, IEEE/APA) | Canvas (late window closes Dec 8, 3:00 PM) |
+| **Tue Dec 1, 3:00 PM** | **Group Project Presentation PPT** | Canvas (late window closes Dec 8, 3:00 PM) |
+| **Tue Dec 1, 11:59 PM** | Peer Review (each member, individually) | Canvas (late window closes Dec 7, 11:59 PM) |
+| Mon Dec 7, 11:59 PM UTC | Kaggle entry and team merge deadline | Kaggle |
+| Mon Dec 14, 11:59 PM UTC | Kaggle final submission deadline | Kaggle |
+
+**The report is due Dec 1, so any Kaggle scores we want in it must be in by about Nov 29.** The Kaggle Dec 14 deadline doesn't help us.
+
+### Working plan
+| Dates | Goal |
+|---|---|
+| Nov 14–17 | Split into Kaggle teams `GROUP_PROGRAMMING_01_a` / `_b`; assign roles; **baseline submitted for both teams**; EDA notebook |
+| Nov 17–25 | Each member builds and submits 2–3 models (`members/<username>/`); log every experiment, including failures |
+| Nov 25–28 | Final submissions; collect leaderboard screenshots; freeze results |
+| Nov 26–30 | Write the report and slides (sections in `docs/report/` and `docs/presentation/`) |
+| Dec 1 | Submit report + PPT by 3:00 PM; peer reviews by 11:59 PM |
+
 ## Problem
 Predict the 2D chemical structure of unknown small molecules from tandem mass spectrometry (MS/MS) data. Combine evidence across spectra and output a **ranked list of candidate molecular structures** for each unknown molecule.
 

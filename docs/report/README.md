@@ -1,11 +1,15 @@
 # Final Report
 
-Sections:
-1. Introduction & competition summary
-2. Data exploration & preprocessing
-3. Baseline model
-4. Improved approaches & experiments (incl. failed approaches and lessons)
-5. Kaggle performance over time & best result vs. baseline
-6. Challenges, trade-offs, compute constraints
-7. Lessons learned & future improvements
-8. Team contribution table
+**Due: Tuesday, December 1, 2026, 3:00 PM on Canvas** (120 pts; late submissions accepted until Dec 8, 3:00 PM).
+
+**Format:** proper academic format, **IEEE or APA**. One report for the whole group (both Kaggle teams).
+
+## Required content
+1. Introduction, Literature Review, and Related Work
+2. Data Exploration and Processing, Problem Formulation, and Model Selection
+3. Evaluation, Result Analysis, and Visualization
+4. **Kaggle evidence for both Kaggle teams** (GROUP_PROGRAMMING_01_a and _b): both team names, the members of each, and each team's submission history, baseline score and best score. Source: `submissions/submission_log.md`, `results/leaderboard_evidence/`, `docs/team_roles.md`
+5. At least one **failed or ineffective approach** and what we learned (source: `experiments/experiment_log.md`)
+6. **Contribution table**: each member's responsibilities and completed work (source: `docs/team_roles.md`)
+
+Also from the course brief (G.5): challenges, trade-offs, compute constraints, lessons learned, concrete future improvements.
