@@ -53,14 +53,14 @@ Add their embeddings as extra columns in the logits matrix. Log E302: does it be
 ---
 
 ## What to expect
-- Alone it may be below the 0.877 baseline on validation (all validation molecules are in the library). The hard-negative model and the blend are where you can gain.
+- Alone it may be below the 0.929 baseline on validation (all validation molecules are in the library). The hard-negative model and the blend are where you can gain.
 - Watch for **collapse** (all embeddings identical, loss stuck at log(batch)). If so, lower lr and check the L2-normalisation.
 
 ## Kaggle notes
 Upload both encoders' weights as `casmi-prakhar-weights`. Needs RDKit for fingerprints; tell Anees if `import rdkit` fails on Kaggle.
 
 ## Checklist
-- [ ] Send Anees your GitHub username; accept invites; setup done, baseline 0.877 (Nov 15)
+- [ ] Send Anees your GitHub username; accept invites; setup done, baseline 0.929 (Nov 15)
 - [ ] Model 1 trained, validated, logged (E301), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 trained, validated, logged (E302), submitted (Nov 22)
 - [ ] (Optional) Model 3 (E303)

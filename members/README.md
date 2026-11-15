@@ -21,7 +21,7 @@ Hi team! This page tells you exactly what to do. **Your only job is your models.
 
 | When | What you must have done |
 |---|---|
-| **Sun Nov 15** | Setup done (Steps 1–4 below). Baseline check prints `MRR@25 ≈ 0.877`. |
+| **Sun Nov 15** | Setup done (Steps 1–4 below). Baseline check prints `MRR@25 ≈ 0.929`. |
 | **Thu Nov 19** | **Model 1** validated locally **and submitted to Kaggle**. Score posted in the group chat. |
 | **Sun Nov 22** | **Model 2** validated and submitted to Kaggle. |
 | **Tue Nov 24** | Model 3 (optional), last Kaggle submissions. |
@@ -68,9 +68,9 @@ cd data/raw && unzip '*.zip' && rm *.zip && cd ../..
 **Step 4: Build the reference library and check the baseline:**
 ```bash
 python -m src.data.build_reference      # ~1-3 min, writes data/processed/
-python -m src.evaluation.validate       # must print  [library-cosine] MRR@25 = 0.877
+python -m src.evaluation.validate       # must print  [library-cosine] MRR@25 = 0.929
 ```
-✅ If you see `0.877`, you're set up. Post "setup done" in the group chat.
+✅ If you see `0.929`, you're set up. Post "setup done" in the group chat.
 ❌ If anything fails, post the **full error message** in the group chat.
 
 No GPU on your laptop? Train on **Kaggle notebooks** (free GPU, 30 h/week) or **Google Colab**. Loading the training data needs ~5 GB RAM with `max_per_structure=3`, less with `sample=` (see below).
@@ -115,7 +115,7 @@ evaluate(MyModel())                    # 250 validation molecules, prints MRR@25
 evaluate(MyModel(), limit=20)          # quick debug on 20 molecules
 evaluate(MyModel(), hide_true=True)    # only for models that propose new structures (see your task)
 ```
-**Numbers to beat:** baseline library cosine = **0.877**, mass only = **0.824**.
+**Numbers to beat:** tuned library search = **0.929** (this is `CosineScorer` and the `cosine` column you get for free). For reference: original baseline = 0.877, mass only = 0.824.
 A model that scores *below* the baseline is still useful: report it honestly (it counts as a "failed approach" in the report), and try **blending**: `score = a * your_score + (1 - a) * candidates.cosine.values`.
 
 **Rules for a fair comparison:**

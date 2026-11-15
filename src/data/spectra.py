@@ -46,8 +46,10 @@ def neutral_mass(precursor_mz, adduct):
     return np.nan if delta is None else precursor_mz - delta
 
 
-def clean_peaks(mzs, ints, precursor_mz, top_n=64, min_rel=0.01, max_above_precursor=2.0):
-    """Relative-intensity floor, drop peaks above precursor, keep top-N, sqrt-scale, L2-normalise.
+def clean_peaks(mzs, ints, precursor_mz, top_n=32, min_rel=0.01, max_above_precursor=2.0, power=0.5):
+    """Relative-intensity floor, drop peaks above precursor, keep top-N, intensity**power, L2-normalise.
+
+    power=0.5 is sqrt scaling (default); 1.0 keeps raw intensities; 0 makes every peak equal.
 
     Returns (mz float32, intensity float32) sorted by m/z; empty arrays if nothing survives.
     """
@@ -63,7 +65,7 @@ def clean_peaks(mzs, ints, precursor_mz, top_n=64, min_rel=0.01, max_above_precu
         idx = np.argpartition(-ints, top_n)[:top_n]
         mzs, ints = mzs[idx], ints[idx]
     order = np.argsort(mzs)
-    mzs, ints = mzs[order], np.sqrt(ints[order])
+    mzs, ints = mzs[order], ints[order] ** power
     norm = np.linalg.norm(ints)
     if norm > 0:
         ints = ints / norm

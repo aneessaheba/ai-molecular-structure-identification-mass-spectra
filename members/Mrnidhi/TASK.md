@@ -25,7 +25,7 @@ for idx in candidates.struct_idx:
         if lib.mode[j] != spectrum["ionization_mode"]: continue
         mz, intensity = lib.peaks(j)
 ```
-Score = mean over the molecule's spectra of the max similarity over the candidate's reference spectra (same as the baseline). Validate → E501. Did entropy beat cosine (0.877)?
+Score = mean over the molecule's spectra of the max similarity over the candidate's reference spectra (same as the baseline). Validate → E501. Did entropy beat cosine (0.929)?
 
 ## Model 2: LightGBM LambdaRank re-ranker (due Sun Nov 22)
 **Features per candidate** (build a function `features(spectra, candidates) → DataFrame`):
@@ -59,13 +59,13 @@ If teammates' models are ready, their scores can become features too (coordinate
 ---
 
 ## What to expect
-Entropy similarity should be close to or above the baseline cosine. The LightGBM ranker is the most likely single model to beat 0.877. Watch for **leakage**: never use `enveda-np-examples` molecules in training.
+Entropy similarity should be close to or above the baseline cosine. The LightGBM ranker is the most likely single model to beat 0.929. Watch for **leakage**: never use `enveda-np-examples` molecules in training.
 
 ## Kaggle notes
 Save the ranker with `ranker.booster_.save_model("ranker.txt")` and upload it as `casmi-srinidhi-weights`. If `ms_entropy` or `lightgbm` isn't installed on Kaggle, upload its wheel (`pip download ms_entropy -d wheels/`) in the same dataset and install with `--no-index --find-links`.
 
 ## Checklist
-- [ ] Setup done, baseline 0.877 (Nov 15)
+- [ ] Setup done, baseline 0.929 (Nov 15)
 - [ ] Model 1 (entropy) validated, logged (E501), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 (LightGBM ranker) validated, logged (E502), submitted (Nov 22)
 - [ ] (Optional) Model 3 (E503)

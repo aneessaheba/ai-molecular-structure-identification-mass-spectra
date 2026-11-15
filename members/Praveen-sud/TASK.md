@@ -49,14 +49,14 @@ Embedding ~500k spectra takes a while: use a Kaggle/Colab GPU, save embeddings t
 ---
 
 ## What to expect
-Model 1 should be close to or above the 0.877 baseline (it's a better similarity measure on the same library). Model 2 alone will likely be lower, but it's the general one. Both results are valuable.
+Model 1 should be close to or above the 0.929 baseline (it's a better similarity measure on the same library). Model 2 alone will likely be lower, but it's the general one. Both results are valuable.
 
 ## Kaggle notes (internet is OFF)
 - Upload the DreaMS **weights** and the **package wheels** as a dataset `casmi-praveen-dreams`: `pip download <dreams package and deps> -d wheels/`, then in the notebook `pip install --no-index --find-links /kaggle/input/casmi-praveen-dreams/wheels ...`.
 - Turn the **GPU on** for the submission notebook. Embedding candidates' reference spectra at submission time must fit in 9 h. It should take minutes, but time it.
 
 ## Checklist
-- [ ] Setup done, baseline 0.877 (Nov 15); DreaMS embeds 10 spectra (Nov 16)
+- [ ] Setup done, baseline 0.929 (Nov 15); DreaMS embeds 10 spectra (Nov 16)
 - [ ] Model 1 validated, logged (E401), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 validated, logged (E402), submitted (Nov 22)
 - [ ] (Optional) blend (E403)

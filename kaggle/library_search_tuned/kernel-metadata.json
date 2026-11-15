@@ -1,0 +1,15 @@
+{
+ "id": "aneessahebaguddi/casmi26-library-search-tuned",
+ "title": "casmi26-library-search-tuned",
+ "code_file": "notebook.ipynb",
+ "language": "python",
+ "kernel_type": "notebook",
+ "is_private": true,
+ "enable_gpu": false,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [
+  "enveda-CASMI26-molecule-id-mass-spectra"
+ ],
+ "kernel_sources": []
+}

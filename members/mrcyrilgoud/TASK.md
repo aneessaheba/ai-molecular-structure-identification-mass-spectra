@@ -60,14 +60,14 @@ Log as E102. Compare with Model 1: did losses/metadata help?
 ---
 
 ## What to expect
-- Alone, the fingerprint model will probably score **below** the baseline's 0.877 (the validation molecules are all in the library, which favours library search). That's fine and expected. **Explain it in your hand-off.** The blend is where you can beat the baseline.
+- Alone, the fingerprint model will probably score **below** the baseline's 0.929 (the validation molecules are all in the library, which favours library search). That's fine and expected. **Explain it in your hand-off.** The blend is where you can beat the baseline.
 - Things to try if time allows: 4096 bits, bigger hidden layers, `log1p` vs sqrt intensities, separate models per ionisation mode.
 
 ## Kaggle notes
 Upload `model.pt` (+ any normalisation constants) as dataset `casmi-cyril-weights`. Your scorer needs RDKit for `morgan_fps`; if `import rdkit` fails on Kaggle, tell Anees (wheels dataset).
 
 ## Checklist
-- [ ] Setup done, baseline check prints 0.877 (Nov 15)
+- [ ] Setup done, baseline check prints 0.929 (Nov 15)
 - [ ] Model 1 trained, validated, logged (E101), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 trained, validated, logged (E102), submitted (Nov 22)
 - [ ] (Optional) blend, logged (E103)

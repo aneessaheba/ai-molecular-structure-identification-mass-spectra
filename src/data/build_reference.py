@@ -21,7 +21,7 @@ COLS = ["ingest_lib", "normalized_smiles", "inchikey14", "molecular_formula", "i
         "adduct", "precursor_mz", "ms2_mzs", "ms2_normalized_intensities"]
 
 
-def build(train_path, out_dir, top_n=64, min_rel=0.01, min_peaks=3):
+def build(train_path, out_dir, top_n=32, min_rel=0.01, min_peaks=3, power=0.5):
     os.makedirs(out_dir, exist_ok=True)
     pf = pq.ParquetFile(train_path)
     metas, mz_chunks, int_chunks = [], [], []
@@ -33,7 +33,7 @@ def build(train_path, out_dir, top_n=64, min_rel=0.01, min_peaks=3):
         df = tbl.drop(["ms2_mzs", "ms2_normalized_intensities"]).to_pandas()
         starts, lens = np.zeros(len(df), np.int64), np.zeros(len(df), np.int32)
         for i, (mz, it, pmz) in enumerate(zip(mz_list, in_list, df.precursor_mz.values)):
-            m, s = clean_peaks(mz or [], it or [], pmz, top_n=top_n, min_rel=min_rel)
+            m, s = clean_peaks(mz or [], it or [], pmz, top_n=top_n, min_rel=min_rel, power=power)
             starts[i], lens[i] = offset, m.size
             if m.size:
                 mz_chunks.append(m)
@@ -74,6 +74,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--train", default="data/raw/train.parquet")
     ap.add_argument("--out", default="data/processed")
-    ap.add_argument("--top_n", type=int, default=64)
+    ap.add_argument("--top_n", type=int, default=32)
     args = ap.parse_args()
     build(args.train, args.out, top_n=args.top_n)
