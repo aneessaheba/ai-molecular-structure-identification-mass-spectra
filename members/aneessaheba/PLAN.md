@@ -3,7 +3,8 @@
 Everything that isn't a teammate's model is mine. Teammates' instructions are in [members/README.md](../README.md).
 
 ## Now (Nov 14–15)
-- [ ] Merge PR #1 (baseline), PR #2 (EDA), PR #3 (team guides) into `main`
+- [x] Merge baseline + EDA into `main` (done via PR #3)
+- [ ] Merge PR #4 (team guides) into `main`
 - [ ] Kaggle: rename my team to `GROUP_PROGRAMMING_01_a`; invite Cyril, Nikhil, Prakhar
 - [ ] Pick a `_b` team leader (Praveen?); they create `GROUP_PROGRAMMING_01_b` and invite Srinidhi, Vrishin, Yash
 - [ ] Upload shared code to Kaggle: `bash scripts/package_src_for_kaggle.sh`, then share the `casmi-team-src` dataset with all 7 teammates
