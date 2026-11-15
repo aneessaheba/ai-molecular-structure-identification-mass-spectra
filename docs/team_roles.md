@@ -8,24 +8,24 @@ Team names must use this exact format. The team leader renames the team on Kaggl
 
 | Kaggle team name | Members |
 |---|---|
-| GROUP_PROGRAMMING_01_a | _TBD (4)_ |
-| GROUP_PROGRAMMING_01_b | _TBD (4)_ |
+| GROUP_PROGRAMMING_01_a | Anees (leader), Cyril, Nikhil, Prakhar |
+| GROUP_PROGRAMMING_01_b | Praveen, Srinidhi, Vrishin, Yash |
 
-> Teammates: add your GitHub username in the table and create `members/<your-github-username>/`.
+Model assignments and instructions: [members/README.md](../members/README.md).
 
 Every member contributes to the technical work, builds **2–3 model architectures**, submits to the leaderboard, and presents.
 
 ## Roles
 | # | Name | GitHub | Primary Role | Models / Architectures |
 |---|------|--------|--------------|------------------------|
-| 1 | Anees Saheba Guddi | @aneessaheba | Team coordinator | |
-| 2 | Cyril Goud Bhooma Goud | @mrcyrilgoud | | |
-| 3 | Nikhil Kanaparthi | @Nikikanaparthi21 | | |
-| 4 | Prakhar Kumar Singh | | | |
-| 5 | Praveen Seera | @Praveen-sud | | |
-| 6 | Srinidhi Gowda Jayaramegowda | @Mrnidhi | | |
-| 7 | Vrishin Dharmesh Kunnatham Parambath | @Viki2183 | | |
-| 8 | Yash Shevkar | @YashShevkar30 | | |
+| 1 | Anees Saheba Guddi | @aneessaheba | Team leader: shared pipeline, EDA, baseline, Kaggle submissions, ensemble, report, presentation | Library search (mass-only, cosine); ensemble |
+| 2 | Cyril Goud Bhooma Goud | @mrcyrilgoud | Modeling | Spectrum→fingerprint MLP (binned; + neutral losses/metadata) |
+| 3 | Nikhil Kanaparthi | @Nikikanaparthi21 | Modeling | Peak-set Transformer → fingerprint (+ losses/metadata tokens) |
+| 4 | Prakhar Kumar Singh | | Modeling | Contrastive spectrum–molecule retrieval (InfoNCE; hard negatives) |
+| 5 | Praveen Seera | @Praveen-sud | Modeling | Pretrained DreaMS embeddings (similarity search; → fingerprint head) |
+| 6 | Srinidhi Gowda Jayaramegowda | @Mrnidhi | Modeling | Spectral entropy similarity; LightGBM LambdaRank re-ranker |
+| 7 | Vrishin Dharmesh Kunnatham Parambath | @Viki2183 | Modeling | Analog-search scorer; COCONUT candidate expansion (Class 2) |
+| 8 | Yash Shevkar | @YashShevkar30 | Modeling | Analog modification enumeration; spectrum→SMILES transformer (Class 3) |
 
 Suggested roles (from brief): team coordinator, data/environment processing, baseline modeling, experimentation, evaluation & Kaggle submissions, documentation/report, presentation.
 

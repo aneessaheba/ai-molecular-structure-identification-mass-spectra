@@ -1,4 +1,7 @@
 # Core
+pyarrow
+scipy
+six
 numpy
 pandas
 scikit-learn
@@ -7,7 +10,8 @@ seaborn
 tqdm
 pyyaml
 jupyter
-kaggle
+kaggle>=1.8
+lightgbm
 
 # Chemistry / mass spectrometry
 rdkit
