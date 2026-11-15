@@ -11,7 +11,7 @@ Everything that isn't a teammate's model is mine. Teammates' instructions are in
 - [ ] Upload shared code to Kaggle: `bash scripts/package_src_for_kaggle.sh`, then share the `casmi-team-src` dataset with all 7 teammates
 - [ ] Check whether `import rdkit` works in a Kaggle notebook. If not, upload the rdkit wheel as dataset `casmi-wheels` and share it
 - [ ] **Submit the baseline for team _a**; ask Cyril to submit the same notebook for _b. Log both + screenshots
-- [ ] Send the group the link to `members/README.md`; get Prakhar's GitHub username and invite him
+- [ ] Send the group the link to `members/README.md`; Prakhar's GitHub username received and invited
 
 ## Nov 16–24: run the team + my own models
 - [ ] Daily: answer questions, review and merge PRs, keep `submissions/submission_log.md` + screenshots current

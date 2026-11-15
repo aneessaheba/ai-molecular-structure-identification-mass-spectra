@@ -21,7 +21,7 @@ Every member contributes to the technical work, builds **2–3 model architectur
 | 1 | Anees Saheba Guddi | @aneessaheba | Team leader: shared pipeline, EDA, baseline, Kaggle submissions, ensemble, report, presentation | Library search (mass-only, cosine); ensemble |
 | 2 | Cyril Goud Bhooma Goud | @mrcyrilgoud | Modeling | Spectrum→fingerprint MLP (binned; + neutral losses/metadata) |
 | 3 | Nikhil Kanaparthi | @Nikikanaparthi21 | Modeling | Peak-set Transformer → fingerprint (+ losses/metadata tokens) |
-| 4 | Prakhar Kumar Singh | | Modeling | Contrastive spectrum–molecule retrieval (InfoNCE; hard negatives) |
+| 4 | Prakhar Kumar Singh | @prakharsinghpersonal | Modeling | Contrastive spectrum–molecule retrieval (InfoNCE; hard negatives) |
 | 5 | Praveen Seera | @Praveen-sud | Modeling | Pretrained DreaMS embeddings (similarity search; → fingerprint head) |
 | 6 | Srinidhi Gowda Jayaramegowda | @Mrnidhi | Modeling | Spectral entropy similarity; LightGBM LambdaRank re-ranker |
 | 7 | Vrishin Dharmesh Kunnatham Parambath | @Viki2183 | Modeling | Analog-search scorer; COCONUT candidate expansion (Class 2) |
