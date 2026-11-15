@@ -1,6 +1,6 @@
 # Peer Review
 
-**Due: Tuesday, December 1, 2026.** Submit on Canvas.
+**Due: Tuesday, December 1, 2026, 11:59 PM** on Canvas (late submissions accepted until Dec 7, 11:59 PM).
 
 - Each member reviews every other member (all 7 teammates, not yourself).
 - The review form is in the Group Project folder on Canvas.

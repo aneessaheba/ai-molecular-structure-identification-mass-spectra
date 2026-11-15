@@ -1,5 +1,7 @@
 # Final Report
 
+**Due: Tuesday, December 1, 2026, 3:00 PM on Canvas** (120 pts; late submissions accepted until Dec 8, 3:00 PM).
+
 **Format:** proper academic format, **IEEE or APA**. One report for the whole group (both Kaggle teams).
 
 ## Required content

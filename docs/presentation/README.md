@@ -1,5 +1,7 @@
 # Final Presentation
 
+**PPT due: Tuesday, December 1, 2026, 3:00 PM on Canvas** (late submissions accepted until Dec 8, 3:00 PM).
+
 All members must present. One presentation for the whole group (both Kaggle teams together).
 
 ## Must clearly show
