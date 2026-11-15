@@ -41,3 +41,10 @@ env/
 .vscode/
 .idea/
 .env
+
+# Model weights and Kaggle upload staging
+members/*/weights/
+*.joblib
+*.onnx
+*.safetensors
+kaggle_upload/

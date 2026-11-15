@@ -84,14 +84,36 @@ def query_molecule(lib, spectra, ppm=15, use_cosine=True, max_ref_per_struct=50)
     return [(int(cands[i]), float(total[i])) for i in order]
 
 
+def candidate_table(lib, spectra, ppm=15, with_cosine=True):
+    """All mass-matched candidates for one molecule as a DataFrame:
+    struct_idx, smiles, inchikey14, formula, mass, n_spectra, cosine (baseline spectral score)."""
+    ranked = query_molecule(lib, spectra, ppm=ppm, use_cosine=with_cosine)
+    if not ranked:
+        return pd.DataFrame(columns=["struct_idx", "smiles", "inchikey14", "formula", "mass",
+                                     "n_spectra", "cosine"])
+    idx = np.array([s for s, _ in ranked])
+    score = np.array([v for _, v in ranked]) - 1e-3 * lib.prior[idx]
+    st = lib.structs.iloc[idx]
+    return pd.DataFrame({
+        "struct_idx": idx, "smiles": st.smiles.values, "inchikey14": st.inchikey14.values,
+        "formula": st.formula.values, "mass": st.mass.values,
+        "n_spectra": lib.spec_count[idx], "cosine": score,
+    })
+
+
 def prepare_queries(df):
     """Group a test-format dataframe into {molecule_id: [spectrum dicts]} with cleaned peaks."""
     out = {}
     for row in df.itertuples(index=False):
         mz, it = clean_peaks(row.ms2_mzs, row.ms2_normalized_intensities, row.precursor_mz)
+        ce = getattr(row, "collision_energy_ev", None)
+        try:
+            ce = float(np.mean(ce)) if len(ce) else np.nan
+        except TypeError:
+            ce = np.nan
         out.setdefault(row.molecule_id, []).append(dict(
             precursor_mz=row.precursor_mz, adduct=row.adduct,
-            ionization_mode=row.ionization_mode, mz=mz, intensity=it))
+            ionization_mode=row.ionization_mode, collision_energy=ce, mz=mz, intensity=it))
     return out
 
 
