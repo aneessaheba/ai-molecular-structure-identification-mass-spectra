@@ -75,7 +75,7 @@ Official metric notebook: https://www.kaggle.com/code/metric/casmi-mean-reciproc
 - **Internet:** disabled during the submission run. All models and data must be attached as Kaggle datasets or models.
 - **External data:** allowed if freely and publicly available, including pre-trained models.
 - **Submissions:** 5 per day per team.
-- **Team size:** max **5** on Kaggle, so our 8-person class team can't be a single Kaggle team. Possible splits: two Kaggle teams (4 + 4), or members submitting individually. The course brief requires every member to submit to the leaderboard.
+- **Team size:** max **5** on Kaggle, so our 8-person group is split into two Kaggle teams named **GROUP_PROGRAMMING_01_a** and **GROUP_PROGRAMMING_01_b** (course naming rule). Both are graded together as one group (see `docs/team_roles.md`).
 - One Kaggle account per person.
 
 ## Available Resources
