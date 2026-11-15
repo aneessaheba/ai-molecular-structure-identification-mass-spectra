@@ -5,8 +5,8 @@
 set -euo pipefail
 USER=$(kaggle config view | awk '/username/ {print $3}')
 STAGE=kaggle_upload/casmi-team-src
-rm -rf "$STAGE" && mkdir -p "$STAGE/casmi_src"
-rsync -a --exclude '__pycache__' src "$STAGE/casmi_src/"
+rm -rf "$STAGE" && mkdir -p "$STAGE"
+rsync -a --exclude "__pycache__" src "$STAGE/"
 cat > "$STAGE/dataset-metadata.json" <<JSON
 {"title": "casmi-team-src", "id": "$USER/casmi-team-src", "licenses": [{"name": "MIT"}]}
 JSON
