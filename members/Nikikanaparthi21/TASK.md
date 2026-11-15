@@ -49,14 +49,14 @@ Pick one:
 ---
 
 ## What to expect
-- The transformer alone will likely score below the 0.877 baseline on our validation set. The blend is where you can beat it. **Compare with Cyril's MLP** at a similar model size; "transformer vs MLP" is a key slide.
+- The transformer alone will likely score below the 0.929 baseline on our validation set. The blend is where you can beat it. **Compare with Cyril's MLP** at a similar model size; "transformer vs MLP" is a key slide.
 - If training is unstable: lower lr to 1e-4, check that padding is masked, clip gradients at 1.0.
 
 ## Kaggle notes
 Upload weights as `casmi-nikhil-weights`. Turn the **GPU on** in the submission notebook if inference is slow (~1,500 spectra is small, so CPU is probably fine).
 
 ## Checklist
-- [ ] Setup done, baseline check prints 0.877 (Nov 15)
+- [ ] Setup done, baseline check prints 0.929 (Nov 15)
 - [ ] Model 1 trained, validated, logged (E201), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 trained, validated, logged (E202), submitted (Nov 22)
 - [ ] (Optional) Model 3 (E203)

@@ -5,7 +5,8 @@
 ## Models
 | # | Model | File | Local MRR@25 | Top-1 | Top-10 | hide_true MRR (if used) | Kaggle score | Exp. ID |
 |---|---|---|---|---|---|---|---|---|
-| 0 | Baseline (library cosine) | src/models/base.py | 0.877 | 0.816 | 0.968 | 0.000 | | E002 |
+| 0a | Original baseline (library cosine, 50 refs, top-64) | kaggle/library_search_baseline | 0.877 | 0.816 | 0.968 | 0.000 | | E002 |
+| 0b | Tuned library search (all refs, top-32) = `CosineScorer` / `cosine` column | src/models/base.py | 0.929 | 0.892 | 0.984 | 0.000 | | E006 |
 | 1 | | | | | | | | |
 | 2 | | | | | | | | |
 | 3 | | | | | | | | |

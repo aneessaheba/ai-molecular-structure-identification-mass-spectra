@@ -54,8 +54,13 @@ class ReferenceLibrary:
         return self.mz[a:a + self.plen[j]], self.inten[a:a + self.plen[j]]
 
 
-def query_molecule(lib, spectra, ppm=15, use_cosine=True, max_ref_per_struct=50):
+def query_molecule(lib, spectra, ppm=15, use_cosine=True, max_ref_per_struct=None, tol=0.01, agg="mean",
+                   cross_mode=False):
     """spectra: list of dicts with precursor_mz, adduct, ionization_mode, mz, intensity (cleaned).
+    max_ref_per_struct: compare against at most this many reference spectra per candidate
+    (None = all; the original baseline E002 used 50 with top_n=64).
+    tol: m/z tolerance (Da) for matching peaks. agg: how to combine the per-spectrum best scores
+    ("mean" or "max"). cross_mode: also compare against reference spectra of the other ionisation mode.
     Returns list of (struct_idx, score) best first."""
     masses = [neutral_mass(s["precursor_mz"], s["adduct"]) for s in spectra]
     masses = [m for m in masses if np.isfinite(m)]
@@ -67,17 +72,17 @@ def query_molecule(lib, spectra, ppm=15, use_cosine=True, max_ref_per_struct=50)
     scores = np.zeros(cands.size)
     if use_cosine:
         for ci, s in enumerate(cands):
-            refs = list(lib.spectra_of(s))[:max_ref_per_struct]
+            refs = list(lib.spectra_of(s))[:max_ref_per_struct] if max_ref_per_struct else lib.spectra_of(s)
             per_query = []
             for q in spectra:
                 best = 0.0
                 for j in refs:
-                    if lib.mode[j] != q["ionization_mode"]:
+                    if not cross_mode and lib.mode[j] != q["ionization_mode"]:
                         continue
                     mz_r, in_r = lib.peaks(j)
-                    best = max(best, cosine(q["mz"], q["intensity"], mz_r, in_r))
+                    best = max(best, cosine(q["mz"], q["intensity"], mz_r, in_r, tol=tol))
                 per_query.append(best)
-            scores[ci] = np.mean(per_query)
+            scores[ci] = np.max(per_query) if agg == "max" else np.mean(per_query)
     # tiny prior so ties (and the mass-only baseline) prefer frequently measured structures
     total = scores + 1e-3 * lib.prior[cands]
     order = np.argsort(-total)
@@ -101,11 +106,11 @@ def candidate_table(lib, spectra, ppm=15, with_cosine=True):
     })
 
 
-def prepare_queries(df):
+def prepare_queries(df, **clean_kw):
     """Group a test-format dataframe into {molecule_id: [spectrum dicts]} with cleaned peaks."""
     out = {}
     for row in df.itertuples(index=False):
-        mz, it = clean_peaks(row.ms2_mzs, row.ms2_normalized_intensities, row.precursor_mz)
+        mz, it = clean_peaks(row.ms2_mzs, row.ms2_normalized_intensities, row.precursor_mz, **clean_kw)
         ce = getattr(row, "collision_energy_ev", None)
         try:
             ce = float(np.mean(ce)) if len(ce) else np.nan

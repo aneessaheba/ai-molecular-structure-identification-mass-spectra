@@ -15,7 +15,7 @@ Everything that isn't a teammate's model is mine. Teammates' instructions are in
 
 ## Nov 16–24: run the team + my own models
 - [ ] Daily: answer questions, review and merge PRs, keep `submissions/submission_log.md` + screenshots current
-- [ ] Nov 16: check everyone has posted "setup done" (baseline 0.877)
+- [ ] Nov 16: check everyone has posted "setup done" (baseline 0.929)
 - [ ] Nov 19: check everyone has Model 1 submitted. Chase anyone who hasn't
 - [ ] My Model 2: library-search tuning: peak floor / top-N / tolerance sweep, max vs mean aggregation across spectra, cross-mode matching (E003+)
 - [ ] My Model 3: **final ensemble** of teammates' scorers (rank averaging, then a weighted blend tuned on validation)

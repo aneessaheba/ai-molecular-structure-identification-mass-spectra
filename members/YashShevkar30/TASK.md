@@ -52,7 +52,7 @@ Report: number of candidates generated per molecule, % valid, % within mass, rec
 Model 1 needs no weights, only RDKit (tell Anees if `import rdkit` fails on Kaggle). Model 2: upload the weights as `casmi-yash-weights`. Generation must fit in the 9 h limit (~400 molecules), so time it on 20 molecules first.
 
 ## Checklist
-- [ ] Setup done, baseline 0.877 (Nov 15)
+- [ ] Setup done, baseline 0.929 (Nov 15)
 - [ ] Model 1 validated with hide_true, logged (E701), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 trained and evaluated, logged (E702), submitted if valid (Nov 22)
 - [ ] (Optional) Model 3 (E703)

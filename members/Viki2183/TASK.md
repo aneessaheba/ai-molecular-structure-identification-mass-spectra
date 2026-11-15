@@ -45,13 +45,13 @@ Calibrate library vs COCONUT candidates: e.g. keep library candidates first when
 ---
 
 ## What to expect
-Normal validation may stay near 0.877. **The hide_true score is your headline number.** It shows we can now get molecules the baseline can never find.
+Normal validation may stay near 0.929. **The hide_true score is your headline number.** It shows we can now get molecules the baseline can never find.
 
 ## Kaggle notes
 Upload `coconut.parquet` and the sparse analog matrix (or build the matrix inside the notebook, ~minutes) as dataset `casmi-vrishin-data`. COCONUT is free and public, so it's allowed under the rules.
 
 ## Checklist
-- [ ] Setup done, baseline 0.877 (Nov 15)
+- [ ] Setup done, baseline 0.929 (Nov 15)
 - [ ] Model 1 (analog scorer) validated, logged (E601), **submitted to Kaggle** (Nov 19)
 - [ ] Model 2 (COCONUT expansion) validated with and without hide_true, logged (E602), submitted (Nov 22)
 - [ ] (Optional) Model 3 calibration (E603)
