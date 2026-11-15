@@ -1,6 +1,6 @@
 # Yash: Generating New Structures (Class 3 / novel molecules)
 
-**Kaggle team:** GROUP_PROGRAMMING_01_b · **Experiment IDs:** E700–E799
+**Kaggle team:** GROUP_PROGRAMMING_01_b (**you are the team leader**: create the team, rename it `GROUP_PROGRAMMING_01_b`, invite Praveen, Vrishin and Prakhar, and submit the baseline for _b) · **Experiment IDs:** E700–E799
 Read [members/README.md](../README.md) first (setup, validation, Kaggle, logging).
 
 ## The idea

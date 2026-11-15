@@ -8,8 +8,8 @@ Team names must use this exact format. The team leader renames the team on Kaggl
 
 | Kaggle team name | Members |
 |---|---|
-| GROUP_PROGRAMMING_01_a | Anees (leader), Cyril, Nikhil, Prakhar |
-| GROUP_PROGRAMMING_01_b | Praveen, Srinidhi, Vrishin, Yash |
+| GROUP_PROGRAMMING_01_a | Anees (leader), Cyril, Srinidhi, Nikhil |
+| GROUP_PROGRAMMING_01_b | Yash (leader), Praveen, Vrishin, Prakhar |
 
 Model assignments and instructions: [members/README.md](../members/README.md).
 
