@@ -2,7 +2,7 @@
 
 > Rename this folder to your GitHub username once you have it: `git mv members/prakhar members/<username>`.
 
-**Kaggle team:** GROUP_PROGRAMMING_01_a · **Experiment IDs:** E300–E399
+**Kaggle team:** GROUP_PROGRAMMING_01_b · **Experiment IDs:** E300–E399
 Read [members/README.md](../README.md) first (setup, validation, Kaggle, logging).
 
 ## The idea

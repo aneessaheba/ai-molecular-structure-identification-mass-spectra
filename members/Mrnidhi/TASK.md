@@ -1,6 +1,6 @@
 # Srinidhi: Entropy Similarity + Learning-to-Rank (LightGBM)
 
-**Kaggle team:** GROUP_PROGRAMMING_01_b · **Experiment IDs:** E500–E599
+**Kaggle team:** GROUP_PROGRAMMING_01_a · **Experiment IDs:** E500–E599
 Read [members/README.md](../README.md) first (setup, validation, Kaggle, logging).
 
 ## The idea

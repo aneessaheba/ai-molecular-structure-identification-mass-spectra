@@ -1,6 +1,6 @@
 # Yash: Generating New Structures (Class 3 / novel molecules)
 
-**Kaggle team:** GROUP_PROGRAMMING_01_b · **Experiment IDs:** E700–E799
+**Kaggle team:** GROUP_PROGRAMMING_01_a · **Experiment IDs:** E700–E799
 Read [members/README.md](../README.md) first (setup, validation, Kaggle, logging).
 
 ## The idea

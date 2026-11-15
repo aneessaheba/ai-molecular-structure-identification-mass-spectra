@@ -1,6 +1,6 @@
 # Cyril: Spectrum → Fingerprint with MLPs
 
-**Kaggle team:** GROUP_PROGRAMMING_01_a · **Experiment IDs:** E100–E199
+**Kaggle team:** GROUP_PROGRAMMING_01_b (**you are the team leader**: create the team, rename it `GROUP_PROGRAMMING_01_b`, invite Praveen, Vrishin and Prakhar, and submit the baseline for _b) · **Experiment IDs:** E100–E199
 Read [members/README.md](../README.md) first (setup, validation, Kaggle, logging).
 
 ## The idea
