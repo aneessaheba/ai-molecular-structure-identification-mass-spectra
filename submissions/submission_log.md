@@ -2,12 +2,14 @@
 
 Submit regularly throughout the project. Save a screenshot of each notable result in `results/leaderboard_evidence/`.
 
-| # | Date | Member | Model / Experiment ID | Public LB Score | Private LB (if shown) | Notes | Screenshot |
-|---|------|--------|-----------------------|-----------------|-----------------------|-------|------------|
-| 1 | | | Baseline (E001) | | | | |
+| # | Date | Kaggle Team (_a/_b) | Member | Model / Experiment ID | Public LB Score | Private LB (if shown) | Notes | Screenshot |
+|---|------|--------------------|--------|-----------------------|-----------------|-----------------------|-------|------------|
+| 1 | | | | Baseline (E002) | | | | |
 
-## Summary
-- **Baseline score:**
-- **Best score (by course cutoff):**
-- **Improvement over baseline:**
-- **Leaderboard rank / percentile:**
+## Summary (fill in for each Kaggle team; the report needs both)
+| | GROUP_PROGRAMMING_01_a | GROUP_PROGRAMMING_01_b |
+|---|---|---|
+| Baseline score | | |
+| Best score (by course cutoff) | | |
+| Improvement over baseline | | |
+| Leaderboard rank / percentile | | |
