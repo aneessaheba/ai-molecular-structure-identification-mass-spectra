@@ -9,7 +9,7 @@ Hi team! This page tells you exactly what to do. **Your only job is your models.
 | Anees (leader, team _a) | aneessaheba | GROUP_PROGRAMMING_01_a | (report, slides, shared code, ensemble) |
 | Cyril (team _b leader) | mrcyrilgoud | GROUP_PROGRAMMING_01_b | [mrcyrilgoud/TASK.md](mrcyrilgoud/TASK.md) |
 | Nikhil | Nikikanaparthi21 | GROUP_PROGRAMMING_01_a | [Nikikanaparthi21/TASK.md](Nikikanaparthi21/TASK.md) |
-| Prakhar | _send your username_ | GROUP_PROGRAMMING_01_b | [prakhar/TASK.md](prakhar/TASK.md) |
+| Prakhar | prakharsinghpersonal | GROUP_PROGRAMMING_01_b | [prakharsinghpersonal/TASK.md](prakharsinghpersonal/TASK.md) |
 | Praveen | Praveen-sud | GROUP_PROGRAMMING_01_b | [Praveen-sud/TASK.md](Praveen-sud/TASK.md) |
 | Srinidhi | Mrnidhi | GROUP_PROGRAMMING_01_a | [Mrnidhi/TASK.md](Mrnidhi/TASK.md) |
 | Vrishin | Viki2183 | GROUP_PROGRAMMING_01_b | [Viki2183/TASK.md](Viki2183/TASK.md) |
