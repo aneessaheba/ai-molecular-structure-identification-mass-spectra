@@ -7,13 +7,13 @@ Hi team! This page tells you exactly what to do. **Your only job is your models.
 | Member | GitHub | Kaggle team | Your task file |
 |---|---|---|---|
 | Anees (leader, team _a) | aneessaheba | GROUP_PROGRAMMING_01_a | (report, slides, shared code, ensemble) |
-| Cyril | mrcyrilgoud | GROUP_PROGRAMMING_01_a | [mrcyrilgoud/TASK.md](mrcyrilgoud/TASK.md) |
+| Cyril (team _b leader) | mrcyrilgoud | GROUP_PROGRAMMING_01_b | [mrcyrilgoud/TASK.md](mrcyrilgoud/TASK.md) |
 | Nikhil | Nikikanaparthi21 | GROUP_PROGRAMMING_01_a | [Nikikanaparthi21/TASK.md](Nikikanaparthi21/TASK.md) |
 | Prakhar | _send your username_ | GROUP_PROGRAMMING_01_b | [prakhar/TASK.md](prakhar/TASK.md) |
 | Praveen | Praveen-sud | GROUP_PROGRAMMING_01_b | [Praveen-sud/TASK.md](Praveen-sud/TASK.md) |
 | Srinidhi | Mrnidhi | GROUP_PROGRAMMING_01_a | [Mrnidhi/TASK.md](Mrnidhi/TASK.md) |
 | Vrishin | Viki2183 | GROUP_PROGRAMMING_01_b | [Viki2183/TASK.md](Viki2183/TASK.md) |
-| Yash (team _b leader) | YashShevkar30 | GROUP_PROGRAMMING_01_b | [YashShevkar30/TASK.md](YashShevkar30/TASK.md) |
+| Yash | YashShevkar30 | GROUP_PROGRAMMING_01_a | [YashShevkar30/TASK.md](YashShevkar30/TASK.md) |
 
 ---
 
@@ -48,7 +48,7 @@ Also read: [docs/competition_summary.md](../docs/competition_summary.md) (the ru
 
 **Step 1: Accept invites and join.**
 - GitHub invite: https://github.com/aneessaheba/ai-molecular-structure-identification-mass-spectra/invitations
-- Kaggle: open the [competition](https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra) → **Join Competition** → accept the rules. Then send your **Kaggle username** to your team leader and accept the **team invite** from your Kaggle team leader: **Anees for _a, Yash for _b**. Don't submit anything until you're on your team.
+- Kaggle: open the [competition](https://www.kaggle.com/competitions/enveda-CASMI26-molecule-id-mass-spectra) → **Join Competition** → accept the rules. Then send your **Kaggle username** to your team leader and accept the **team invite** from your Kaggle team leader: **Anees for _a, Cyril for _b**. Don't submit anything until you're on your team.
 
 **Step 2: Clone and install** (Python 3.10–3.12):
 ```bash

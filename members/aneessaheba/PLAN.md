@@ -6,11 +6,11 @@ Everything that isn't a teammate's model is mine. Teammates' instructions are in
 - [x] Merge baseline + EDA into `main` (done via PR #3)
 - [ ] Merge PR #4 (team guides) into `main`
 - [ ] Collect everyone's Kaggle usernames
-- [ ] Kaggle: rename my team to `GROUP_PROGRAMMING_01_a`; invite Cyril, Srinidhi, Nikhil
-- [ ] Yash (_b leader) creates `GROUP_PROGRAMMING_01_b` and invites Praveen, Vrishin, Prakhar
+- [ ] Kaggle: rename my team to `GROUP_PROGRAMMING_01_a`; invite Yash, Srinidhi, Nikhil
+- [ ] Cyril (_b leader) creates `GROUP_PROGRAMMING_01_b` and invites Praveen, Vrishin, Prakhar
 - [ ] Upload shared code to Kaggle: `bash scripts/package_src_for_kaggle.sh`, then share the `casmi-team-src` dataset with all 7 teammates
 - [ ] Check whether `import rdkit` works in a Kaggle notebook. If not, upload the rdkit wheel as dataset `casmi-wheels` and share it
-- [ ] **Submit the baseline for team _a**; ask Yash to submit the same notebook for _b. Log both + screenshots
+- [ ] **Submit the baseline for team _a**; ask Cyril to submit the same notebook for _b. Log both + screenshots
 - [ ] Send the group the link to `members/README.md`; get Prakhar's GitHub username and invite him
 
 ## Nov 16–24: run the team + my own models
