@@ -1,11 +1,13 @@
-"""Build the Kaggle submission notebook for Model 1 from the model file.
+"""Build the Kaggle submission notebooks for Model 1 and Model 2 from the model files.
 
-The notebook follows kaggle/TEMPLATE_submission.ipynb. The model cell is copied from
-model_entropy.py by this script, so the notebook can never drift from the tested code.
+The notebooks follow kaggle/TEMPLATE_submission.ipynb. The model cells are copied from
+model_entropy.py and model_ranker.py by this script, so a notebook can never drift from
+the tested code.
 
 Run from the repo root:
     python -m members.Mrnidhi.make_kaggle_notebook
 """
+import re
 from pathlib import Path
 
 import nbformat
@@ -13,6 +15,7 @@ from nbformat.v4 import new_code_cell, new_markdown_cell, new_notebook
 
 HERE = Path(__file__).parent
 OUT = HERE / "kaggle_model1_entropy.ipynb"
+OUT_RANKER = HERE / "kaggle_model2_ranker.ipynb"
 
 INTRO = """# CASMI 2026: Model 1, entropy similarity (E501)
 
@@ -64,26 +67,84 @@ print(sub.shape, f"guesses per molecule: {guesses.min()} to {guesses.max()}", f"
 sub.head()
 '''
 
+INTRO_RANKER = """# CASMI 2026: Model 2, LightGBM ranker (E502)
 
-def model_source() -> str:
-    """model_entropy.py without its command-line block."""
-    source = (HERE / "model_entropy.py").read_text()
+Srinidhi, team GROUP_PROGRAMMING_01_a. Describes each candidate with 15 features and ranks
+the candidates with a trained LightGBM LambdaRank model.
+
+**Inputs to add:** the competition data, the team dataset `casmi-team-src` and my dataset
+`casmi-srinidhi-weights`, which holds `ranker.txt`. **Settings:** Internet OFF, no GPU.
+"""
+
+WEIGHTS_CELL = '''# The trained ranker from the casmi-srinidhi-weights dataset
+WEIGHTS = glob.glob(f"{INPUT}/**/ranker.txt", recursive=True)[0]
+
+# lightgbm is normally part of the Kaggle image. If it is missing, install it from a wheel
+# placed next to ranker.txt, because pip cannot download anything with the internet off.
+try:
+    import lightgbm
+except ImportError:
+    os.system(f"pip install --no-index --find-links {os.path.dirname(WEIGHTS)} lightgbm -q")
+    import lightgbm
+print("ranker:", WEIGHTS, "| lightgbm", lightgbm.__version__)
+'''
+
+MODEL_NOTE_RANKER = """## The model
+Two cells, copied by `make_kaggle_notebook.py`: first `members/Mrnidhi/model_entropy.py`
+(Model 1, whose score is one of the features), then `members/Mrnidhi/model_ranker.py`.
+On Kaggle the full library is used (`exclude_libs=()`); locally the validation library is left out.
+"""
+
+ENTROPY_IMPORT = re.compile(r"from members\.Mrnidhi\.model_entropy import \([^)]*\)\n\n")   # and its blank line
+LOCAL_WEIGHTS = 'MODEL_PATH = Path(__file__).parent / "weights" / "ranker.txt"'
+
+
+def module_body(filename: str) -> str:
+    """A model file without its command-line block."""
+    source = (HERE / filename).read_text()
     body, marker, _ = source.partition('\n\nif __name__ == "__main__":')
     if not marker:
-        raise ValueError("model_entropy.py has no __main__ block to cut at")
-    return body.rstrip() + "\n\n\nmodel = EntropyScorer(ref_dir=REF, exclude_libs=())\nprint(model.name)\n"
+        raise ValueError(f"{filename} has no __main__ block to cut at")
+    return body.rstrip() + "\n"
 
 
-def main() -> None:
-    notebook = new_notebook(cells=[
-        new_markdown_cell(INTRO), new_code_cell(SETUP), new_markdown_cell(MODEL_NOTE),
-        new_code_cell(model_source()), new_code_cell(SUBMIT),
-    ])
+def model_source() -> str:
+    """The Model 1 cell: model_entropy.py and the line that creates the model."""
+    return module_body("model_entropy.py") + "\n\nmodel = EntropyScorer(ref_dir=REF, exclude_libs=())\nprint(model.name)\n"
+
+
+def ranker_source() -> str:
+    """The Model 2 cell: model_ranker.py changed in the two places a notebook needs.
+
+    The import of Model 1 goes, because the cell above already defines those names. The
+    weights path points at the Kaggle dataset, because a notebook has no __file__.
+    """
+    body, imports = ENTROPY_IMPORT.subn("", module_body("model_ranker.py"))
+    if imports != 1 or body.count(LOCAL_WEIGHTS) != 1:
+        raise ValueError("model_ranker.py no longer has the import or the weights path this script edits")
+    body = body.replace(LOCAL_WEIGHTS, "MODEL_PATH = Path(WEIGHTS)")
+    return body + "\n\nmodel = RankerScorer(ref_dir=REF, exclude_libs=())\nprint(model.name)\n"
+
+
+def write_notebook(cells: list, out: Path) -> None:
+    notebook = new_notebook(cells=cells)
     notebook.metadata["kernelspec"] = {"display_name": "Python 3", "language": "python", "name": "python3"}
     for i, cell in enumerate(notebook.cells):      # fixed ids, so re-running gives the same file
         cell["id"] = f"cell-{i}"
-    nbformat.write(notebook, OUT)
-    print(f"wrote {OUT}")
+    nbformat.write(notebook, out)
+    print(f"wrote {out}")
+
+
+def main() -> None:
+    write_notebook([
+        new_markdown_cell(INTRO), new_code_cell(SETUP), new_markdown_cell(MODEL_NOTE),
+        new_code_cell(model_source()), new_code_cell(SUBMIT),
+    ], OUT)
+    write_notebook([
+        new_markdown_cell(INTRO_RANKER), new_code_cell(SETUP), new_code_cell(WEIGHTS_CELL),
+        new_markdown_cell(MODEL_NOTE_RANKER), new_code_cell(module_body("model_entropy.py")),
+        new_code_cell(ranker_source()), new_code_cell(SUBMIT),
+    ], OUT_RANKER)
 
 
 if __name__ == "__main__":

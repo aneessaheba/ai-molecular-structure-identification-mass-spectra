@@ -40,15 +40,15 @@ _Model 2: share of the ranker's total gain per feature. One feature, the rank by
 _Model 1 against cosine on the same reference spectra, on the pipeline on main and on the tuned pipeline of PR #8. Local validation MRR@25, 250 molecules. Drawn by `make_figure.py`._
 
 ## Kaggle evidence
-Screenshots in `results/leaderboard_evidence/`: none yet. Neither model has been submitted. The notebook is `kaggle_model1_entropy.ipynb` (built by `make_kaggle_notebook.py`); a dry run of it outside Kaggle wrote a valid 400-row `submission.csv`.
+Screenshots in `results/leaderboard_evidence/`: none yet. Neither model has been submitted. The notebooks are `kaggle_model1_entropy.ipynb` and `kaggle_model2_ranker.ipynb`, both built from the model files by `make_kaggle_notebook.py`. A dry run of each outside Kaggle, with only the shared `src/` available, wrote a valid 400-row `submission.csv`. Model 2 also needs `weights/ranker.txt` as an input, uploaded as the private dataset `casmi-srinidhi-weights`, and the ranker has to be trained with the same `src/` that is in `casmi-team-src`.
 
 ## How to run
 ```bash
 python -m members.Mrnidhi.model_entropy            # validate Model 1
 python -m members.Mrnidhi.train_ranker             # Model 2: build the training table, train, save weights/ranker.txt
 python -m members.Mrnidhi.model_ranker             # validate Model 2
-python -m pytest members/Mrnidhi/tests -q          # 60 tests (needs pytest; Model 2 tests need the trained ranker)
-python -m members.Mrnidhi.make_kaggle_notebook     # rebuild the Model 1 Kaggle notebook
+python -m pytest members/Mrnidhi/tests -q          # 66 tests (needs pytest; Model 2 tests need the trained ranker)
+python -m members.Mrnidhi.make_kaggle_notebook     # rebuild both Kaggle notebooks
 python -m members.Mrnidhi.make_figure              # redraw figure.png
 python -m members.Mrnidhi.make_importance_figure   # redraw figure_importance.png
 ```
