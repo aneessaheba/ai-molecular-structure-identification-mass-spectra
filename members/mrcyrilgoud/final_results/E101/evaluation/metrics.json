@@ -1,0 +1,20 @@
+{
+  "model": "fp-mlp-spectrum",
+  "mrr": 0.41883574863389106,
+  "top1": 0.26,
+  "top10": 0.756,
+  "top25": 0.884,
+  "evaluation_protocol": {
+    "reference": {
+      "source_manifest": "8eb3377205c4c7c0aa9c4908c5358ed62ecf6fa6da34d6dc95949eeb7f10db89"
+    },
+    "ppm": 15,
+    "hide_true": false,
+    "limit": null,
+    "k": 25,
+    "molecules_sha256": "829b9d982c9aa4950aaec5a8a726db62ceccdf102197b7d19e85d47682ef8ab5"
+  },
+  "checkpoint_sha256": "f8ae89d5ea96f8879e2300a3508f793b1cd7ef5dc353eb00741ecd0f0d541d10",
+  "split_id": "325f6fd7d6d3eda2f89b61af80c3caf47381a6a651c1f5d121728d57d90a2d59",
+  "cache_sha256": "750a1337620b8a2857e8a5ee5c17d94159fb0cdd6889175ef0ad5a27216dd320"
+}
