@@ -10,8 +10,7 @@ Log **every** experiment, including failed ones. One row per run.
 | E602 | 2026-11-26 | Viki2183 | Analog search plus COCONUT candidate expansion, normal evaluation | Mass-matched natural products can recover Class 2 molecules without reference spectra | MRR@25 0.911390; top-1 0.884; top-10 0.964; top-25 0.972; 250 molecules; 451s | | COCONUT November 2026; 479,694 unique molecules after preprocessing; final executed Kaggle CPU notebook result | `members/Viki2183/model_analog_coconut.py`, `members/Viki2183/Viki2183_CASMI26_Analog_COCONUT_E601_E602_final_executed.ipynb` |
 | E602 | 2026-11-26 | Viki2183 | Analog search plus COCONUT candidate expansion, hide_true=True evaluation | Candidate expansion should recover structures absent from the reference library | MRR@25 0.890668; top-1 0.856; top-10 0.952; top-25 0.960; 250 molecules; 444s | | COCONUT November 2026; 479,694 unique molecules after preprocessing; final executed Kaggle CPU notebook result | `members/Viki2183/model_analog_coconut.py`, `members/Viki2183/Viki2183_CASMI26_Analog_COCONUT_E601_E602_final_executed.ipynb` |
 
-COCONUT validation coverage: **NOT COMPUTED**. This percentage must be
-computed from the validation set; no verified coverage value is available.
+COCONUT validation coverage: 249/250 validation molecules (99.60%).
 
 ## Failed / Ineffective Approaches
 

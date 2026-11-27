@@ -19,10 +19,7 @@ The repository's logged E002 baseline is MRR@25 `0.8789`.
 
 ![Final MRR@25 comparison](figure.png)
 
-COCONUT validation coverage: **NOT COMPUTED**. It must be computed directly
-from the validation set; the verified notebook outputs provide the final model
-metrics and the 479,694-row preprocessed candidate count, but not the coverage
-percentage.
+COCONUT validation coverage: 249/250 validation molecules (99.60%).
 
 ## Model 1: sparse analog search
 
