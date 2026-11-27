@@ -1,0 +1,66 @@
+{
+  "stage": "smoke",
+  "source": "Saved Colab outputs in 01/02 notebooks; not a fresh training run",
+  "cached_rows": 1959,
+  "training_rows": 1862,
+  "early_stopping_rows": 97,
+  "epochs": 2,
+  "hardware": "Tesla T4",
+  "validation_molecules": 250,
+  "baseline": {
+    "mrr": 0.8913602175602175,
+    "top1": 0.836,
+    "top10": 0.976,
+    "top25": 0.992
+  },
+  "E101": {
+    "mrr": 0.23610020967082754,
+    "top1": 0.108,
+    "top10": 0.56,
+    "top25": 0.724
+  },
+  "E102": {
+    "mrr": 0.23978514933056055,
+    "top1": 0.112,
+    "top10": 0.544,
+    "top25": 0.728
+  },
+  "E103": {
+    "model": "E102",
+    "alpha": 0.1,
+    "mrr_rounded": 0.889168,
+    "curve_rounded": [
+      {
+        "alpha": 0,
+        "mrr": 0.89136
+      },
+      {
+        "alpha": 0.1,
+        "mrr": 0.889168
+      },
+      {
+        "alpha": 0.2,
+        "mrr": 0.887834
+      },
+      {
+        "alpha": 0.3,
+        "mrr": 0.885823
+      },
+      {
+        "alpha": 0.5,
+        "mrr": 0.881479
+      },
+      {
+        "alpha": 1,
+        "mrr": 0.239785
+      }
+    ]
+  },
+  "baseline_investigation": {
+    "local_shared_mrr": 0.8789759462759463,
+    "local_legacy_mrr": 0.8796426129426129,
+    "local_stable_reference_order_mrr": 0.9013614163614163,
+    "colab_vs_local_changed_molecules": 22,
+    "interpretation": "Reference ordering affects the first-50 cutoff. Exact Colab environment effect remains unisolated."
+  }
+}
