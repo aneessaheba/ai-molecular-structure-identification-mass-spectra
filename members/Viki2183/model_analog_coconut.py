@@ -309,6 +309,10 @@ def main(argv: Optional[Sequence[str]] = None):
     prep.add_argument("--input", required=True)
     prep.add_argument("--output", default=str(DEFAULT_COCONUT_PATH))
 
+    coverage = sub.add_parser("coverage")
+    coverage.add_argument("--table", default=str(DEFAULT_COCONUT_PATH))
+    coverage.add_argument("--train", default="data/raw/train.parquet")
+
     ev = sub.add_parser("evaluate")
     ev.add_argument("--model", choices=("analog", "coconut"), default="analog")
     ev.add_argument("--ref-dir", default=str(DEFAULT_REF_DIR))
@@ -325,6 +329,13 @@ def main(argv: Optional[Sequence[str]] = None):
     if args.command == "build-coconut":
         table = prepare_coconut(args.input, args.output)
         print(f"[coconut] wrote {len(table)} unique molecules to {args.output}")
+        return
+    if args.command == "coverage":
+        result = coconut_coverage(args.table, args.train)
+        percentage = 100.0 * result["fraction"]
+        print(f"covered molecules: {result['covered']}")
+        print(f"total validation molecules: {result['validation_molecules']}")
+        print(f"percentage: {percentage:.6f}%")
         return
     coconut_path = args.coconut if args.model == "coconut" else None
     scorer = AnalogSearchScorer(

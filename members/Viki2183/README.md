@@ -52,6 +52,7 @@ after preprocessing.
 ```bash
 python -m members.Viki2183.model_analog_coconut smoke
 python -m members.Viki2183.model_analog_coconut build-coconut --input path/to/coconut.csv
+python -m members.Viki2183.model_analog_coconut coverage --table data/external/coconut/coconut.parquet --train data/raw/train.parquet
 python -m members.Viki2183.model_analog_coconut evaluate --model analog
 python -m members.Viki2183.model_analog_coconut evaluate --model coconut
 python -m members.Viki2183.model_analog_coconut evaluate --model coconut --hide-true
