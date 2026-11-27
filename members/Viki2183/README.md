@@ -1,39 +1,61 @@
 # Hand-off: @Viki2183
 
-> Fill this in by **Wed Nov 25, 9 PM**. Anees copies it into the report and slides. Your task: [TASK.md](TASK.md)
+Implementation file: `model_analog_coconut.py`. Generated matrices and the
+COCONUT table remain local ignored artifacts and are not committed.
 
-## Models
-| # | Model | File | Local MRR@25 | Top-1 | Top-10 | hide_true MRR (if used) | Kaggle score | Exp. ID |
-|---|---|---|---|---|---|---|---|---|
-| 0 | Baseline (library cosine) | src/models/base.py | 0.877 | 0.816 | 0.968 | 0.000 | | E002 |
-| 1 | | | | | | | | |
-| 2 | | | | | | | | |
-| 3 | | | | | | | | |
+## Final executed Kaggle results
 
-## Model 1: <name>
-- **What it is (2–3 sentences):**
-- **Input → output:**
-- **Architecture:**
-- **Training:** data size, epochs, optimizer, lr, batch size, hardware, training time
-- **Result and interpretation:**
+The final executed notebook used CPU and the official Enveda CASMI competition
+data. The copied notebook is
+`Viki2183_CASMI26_Analog_COCONUT_E601_E602_final_executed.ipynb`.
 
-## Model 2: <name>
-- **What it is:**
-- **What changed vs Model 1, and why:**
-- **Architecture / training:**
-- **Result and interpretation:**
+| Experiment | Model / mode | MRR@25 | Top-1 | Top-10 | Top-25 | Molecules | Runtime (s) |
+|---|---|---:|---:|---:|---:|---:|---:|
+| E601 | Analog search | 0.933871 | 0.904 | 0.992 | 0.996 | 250 | 406 |
+| E602 | Analog + COCONUT, normal | 0.911390 | 0.884 | 0.964 | 0.972 | 250 | 451 |
+| E602 | Analog + COCONUT, hide_true | 0.890668 | 0.856 | 0.952 | 0.960 | 250 | 444 |
 
-## Model 3 (optional): <name>
+The repository's logged E002 baseline is MRR@25 `0.8789`.
 
-## What didn't work, and why (required)
-- **What I tried:**
-- **What happened (numbers):**
-- **Why I think it failed:**
-- **What I learned / what I'd do next:**
+![Final MRR@25 comparison](figure.png)
 
-## Figure
-![](figure.png)
-_One plot: a training curve, or your models vs the baseline._
+COCONUT validation coverage: **NOT COMPUTED**. It must be computed directly
+from the validation set; the verified notebook outputs provide the final model
+metrics and the 479,694-row preprocessed candidate count, but not the coverage
+percentage.
 
-## Kaggle evidence
-Screenshots in `results/leaderboard_evidence/`:
+## Model 1: sparse analog search
+
+For each query spectrum, the scorer bins peaks into 1,000 bins at 1.0 m/z,
+stores one L2-normalised row per reference spectrum in a SciPy CSR matrix, and
+searches the top 20 rows in the same ionisation mode without a precursor-mass
+filter. Each analog's 2048-bit Morgan fingerprint contributes its spectral
+similarity times its fingerprint Tanimoto similarity to the candidate. The
+weighted sum divided by the similarity sum is the candidate score, with an
+optional baseline-cosine blend.
+
+Input -> output: query spectra plus the existing candidate DataFrame -> one
+score per candidate. Cached matrices are written below
+`data/processed/analog_search/`.
+
+## Model 2: COCONUT expansion
+
+`build-coconut` uses RDKit to calculate neutral monoisotopic mass and
+InChIKey14, removes duplicate InChIKey14 values, sorts by mass, and writes a
+local `coconut.parquet`. `extra_candidates` returns COCONUT SMILES within
+plus/minus 15 ppm of the median neutral mass implied by the query spectra.
+The final run used COCONUT version November 2026 with 479,694 unique molecules
+after preprocessing.
+
+## Reproducibility
+
+```bash
+python -m members.Viki2183.model_analog_coconut smoke
+python -m members.Viki2183.model_analog_coconut build-coconut --input path/to/coconut.csv
+python -m members.Viki2183.model_analog_coconut evaluate --model analog
+python -m members.Viki2183.model_analog_coconut evaluate --model coconut
+python -m members.Viki2183.model_analog_coconut evaluate --model coconut --hide-true
+```
+
+Model 3 was not run. No source code, raw data, weights, or Kaggle credentials
+are included in the hand-off notebook.
