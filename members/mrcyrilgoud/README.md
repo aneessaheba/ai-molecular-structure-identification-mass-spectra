@@ -1,6 +1,6 @@
 # Cyril: spectrum → fingerprint MLPs
 
-Both models completed final Colab training on November 25, 2026 (America/Los_Angeles), using 699,550 training spectra and 36,766 spectra for early stopping. Evaluation covers all 250 shared validation molecules. E102 improved standalone MRR@25 over E101 (0.471017 vs 0.418836); the best blend, E102 with alpha 0.2, reached **0.895501**, versus the measured library baseline of **0.891360**. On the Kaggle public leaderboard (team GROUP_PROGRAMMING_01_b, November 27) E103 scored **0.137**, the library baseline 0.135, E102 0.098 and E101 0.089; see [Kaggle results](#kaggle-results). Leaderboard screenshots remain pending.
+Both models completed final Colab training on November 25, 2026 (America/Los_Angeles), using 699,550 training spectra and 36,766 spectra for early stopping. Evaluation covers all 250 shared validation molecules. E102 improved standalone MRR@25 over E101 (0.471017 vs 0.418836); the best blend, E102 with alpha 0.2, reached **0.895501**, versus the measured library baseline of **0.891360**. On the Kaggle public leaderboard (team GROUP_PROGRAMMING_01_b, November 27) E103 scored **0.137**, the library baseline 0.135, E102 0.098 and E101 0.089; see [Kaggle results](#kaggle-results).
 
 Final metrics, histories, per-molecule ranks, environment details, and figures have been downloaded from [Drive's final output folder](https://drive.google.com/drive/folders/1BJxOEuvXe0cpuYjxb61mm64zl6jWhqOx) into [final_results/](final_results/). The [download manifest](final_results/download_manifest.json) records each source URL, modification time, byte count, and SHA256. Best checkpoints are stored locally under the git-ignored `weights/final/E101/best.pt` and `weights/final/E102/best.pt`; their hashes match the training and evaluation reports. Existing model notebooks retain their saved outputs and were not edited during this hand-off update. Earlier smoke results remain in [smoke_results.json](smoke_results.json).
 
@@ -107,7 +107,7 @@ The second notebook exported the [original hand-off report](final_results/handof
 
 **What did not work:** the fully trained standalone MLPs remained well below library cosine: E101 scored 0.418836 and E102 scored 0.471017, versus 0.891360. Richer features helped relative to E101, but did not close that gap. Validation compounds also occur in the reference library through other acquisitions, which favors direct spectral matching; compressing spectra into fingerprint probabilities may also lose discriminative information. These are plausible explanations, not causes isolated by an ablation. The useful outcome is complementary evidence: a small E102 contribution improved validation MRR, while alpha 0.5 reduced it to 0.888956. Earlier two-epoch smoke runs also underperformed and are documented separately in [smoke_results.json](smoke_results.json).
 
-These models only rerank supplied candidates and cannot recover absent structures. No `hide_true` claim is appropriate without candidate expansion. Leaderboard screenshots and the hand-off PR remain outstanding.
+These models only rerank supplied candidates and cannot recover absent structures. No `hide_true` claim is appropriate without candidate expansion.
 
 ### Kaggle results
 
@@ -121,6 +121,8 @@ All four runs were submitted by team GROUP_PROGRAMMING_01_b on November 27, 2026
 | E101 alone | `mrcyrilgoud/casmi-cyril-e101` | 0.089 | 0.4188 |
 
 The leaderboard ranks the four in the same order as local validation, but the scores are far lower: about 6.5 times below their local values for the library methods and 4.8 times below for the MLPs. Local validation contains only Class 1 molecules, while on Kaggle the candidates come only from training structures, so a test molecule whose structure is not in the training set scores 0 under every one of these pipelines. Team _a's identical baseline also scored 0.135. E103's +0.002 over the baseline is inside the leaderboard noise (about ±0.02 with roughly 124 public molecules): E103 and the baseline choose the same top-1 structure for all 400 test molecules and differ only lower in the list. E102 beats E101 by 0.009, the same direction as locally, but also within noise. On November 27 the team's best score, 0.137, ranked 5,544 of 6,173 teams.
+
+![Team _b's four Kaggle submissions and their public scores](../../results/leaderboard_evidence/cyril_team_b_submissions.png)
 
 ## Offline Kaggle submission
 

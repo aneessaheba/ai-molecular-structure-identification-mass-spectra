@@ -67,8 +67,8 @@ Log as E102. Compare with Model 1: did losses/metadata help?
 Upload `model.pt` (+ any normalisation constants) as dataset `casmi-cyril-weights`. Your scorer needs RDKit for `morgan_fps`; if `import rdkit` fails on Kaggle, tell Anees (wheels dataset).
 
 ## Checklist
-- [ ] Setup done, baseline check prints 0.877 (Nov 15)
-- [ ] Model 1 trained, validated, logged (E101), **submitted to Kaggle** (Nov 19)
-- [ ] Model 2 trained, validated, logged (E102), submitted (Nov 22)
-- [ ] (Optional) blend, logged (E103)
-- [ ] Hand-off README + figure + screenshots, PR opened (Nov 25, 9 PM)
+- [x] Setup done, baseline check prints 0.877 (Nov 15)
+- [x] Model 1 trained, validated, logged (E101), **submitted to Kaggle** (Nov 19)
+- [x] Model 2 trained, validated, logged (E102), submitted (Nov 22)
+- [x] (Optional) blend, logged (E103)
+- [x] Hand-off README + figure + screenshots, PR opened (Nov 25, 9 PM)
