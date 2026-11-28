@@ -5,6 +5,7 @@ Submit regularly throughout the project. Save a screenshot of each notable resul
 | # | Date | Kaggle Team (_a/_b) | Member | Model / Experiment ID | Public LB Score | Private LB (if shown) | Notes | Screenshot |
 |---|------|--------------------|--------|-----------------------|-----------------|-----------------------|-------|------------|
 | 1 | | | | Baseline (E002) | | | | |
+| 2 | 2026-11-28 | GROUP_PROGRAMMING_01_a | YashShevkar30 | Model 1: analog enumeration + confidence gate τ=0.7 (E711) | 0.130 (below baseline 0.135) | | Kernel `yashshevkar30/casmi-yash-model1-analog-enum` v3, ref 59039219. Local normal 0.861, hide_true 0.207. Public score is lower than the local normal score, so the local validation set overstates the result | (add screenshot in results/leaderboard_evidence/) |
 
 ## Summary (fill in for each Kaggle team; the report needs both)
 | | GROUP_PROGRAMMING_01_a | GROUP_PROGRAMMING_01_b |
