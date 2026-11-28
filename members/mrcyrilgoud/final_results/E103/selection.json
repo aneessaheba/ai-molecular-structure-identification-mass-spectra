@@ -1,0 +1,16 @@
+{
+  "model": "E102",
+  "alpha": 0.2,
+  "mrr": 0.89550101010101,
+  "checkpoint_sha256": "0a71ab91df104e762290135962680b2a8e18e391ed816d2d6fdf7a3104adf054",
+  "checkpoint_hashes": {
+    "E101": "f8ae89d5ea96f8879e2300a3508f793b1cd7ef5dc353eb00741ecd0f0d541d10",
+    "E102": "0a71ab91df104e762290135962680b2a8e18e391ed816d2d6fdf7a3104adf054"
+  },
+  "evaluation_hashes": {
+    "baseline": "b1ce69409e7702576f4c072aed04c682a1436811e64f343d937fd006434fc40c",
+    "E101": "8113ffd2c53e0010530e143080088afc4abe6e1f1e3082ab8105174a6c12c997",
+    "E102": "36a976723cc761be3eb72dc8bf97d2d32e1264c66f38146f22200ae054474584"
+  },
+  "selection": "Selected on shared validation; not an independent test"
+}

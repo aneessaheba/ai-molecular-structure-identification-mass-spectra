@@ -1,0 +1,42 @@
+{
+  "recorded_at": "2026-11-26T02:34:16.562727+00:00",
+  "python": "3.13.16",
+  "torch": "2.14.1+cu130",
+  "cuda": "13.0",
+  "rdkit": "2026.09.2",
+  "numpy": "2.4.6",
+  "pandas": "2.2.3",
+  "pyarrow": "23.0.1",
+  "gpu": "Tesla T4",
+  "source_sha256": {
+    "src/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "src/data/dataset.py": "94ea52debb275037bdea2a7932676d76b3c55fad0fe24e91b62756b45cff7764",
+    "src/data/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "src/data/spectra.py": "38103d9a7c5b972edd35cd09cb8e957d3eae5c63f1537087c06179467260962a",
+    "src/data/build_reference.py": "12dad32055288c26ff7d2fdc9fab83ac7c25a83a9f1c1fbcea45d644249b0dd3",
+    "src/evaluation/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "src/evaluation/metric.py": "201062e79059a3e3c4cd59721afcc0490f4ee3a6b399ee9e5171cf441c60d66c",
+    "src/evaluation/validate.py": "03de0a0c0afd0aada615df9cbeba54a93c645afe4f2348eca3eb2dff0c7379a3",
+    "src/features/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "src/features/featurize.py": "d8263c990114ff796696df229986e13936367057b8dddc9739f30816cc084606",
+    "src/models/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "src/models/base.py": "a302d69f782daaca049d846dfaddf1e95bf20d2ba9daa609ae5b3aeacd301795",
+    "src/models/library_search.py": "80bb65d47205b7bad846d561abcac7a8cb0d8784ec7197b7a16f19fca4bb6433",
+    "src/utils/__init__.py": "6684c2fb77681657e70477494dbe3f58ee55c81f2396a632af9baa6fc0652b7b",
+    "members/mrcyrilgoud/model_mlp.py": "0e846e60dd6c909486960aa0486625f9864c76de98bb465fea93a91a51d6f991",
+    "members/mrcyrilgoud/test_model_mlp.py": "1572925b2351060712b1d47d13947697137adb478fa90ca339d39d82dc53ebbe",
+    "members/mrcyrilgoud/test_regressions.py": "7b9ad8bb51dd559eb9bb6e74e297342d8ac779bc212ebd8dbcd3c10afe956797",
+    "members/mrcyrilgoud/test_kaggle_data.py": "f0592815492fa50c3c7411954241dbeed3b114783b36b764fc87ed5f9b6f1b97",
+    "members/mrcyrilgoud/kaggle_data.py": "380efa682babc050471ade8517e0ec74e7c0f9cc0e3b230a8411b265c2c9a3fa",
+    "members/mrcyrilgoud/baseline_audit.py": "febac710b4d5369e402dd29f5d0b2cf33b1d408b97ea7226412629288d91a88b"
+  },
+  "stage": "final",
+  "sample": null,
+  "max_epochs": 30,
+  "model_config": {
+    "batch_size": 256,
+    "lr": 0.001,
+    "patience": 3,
+    "seed": 0
+  }
+}

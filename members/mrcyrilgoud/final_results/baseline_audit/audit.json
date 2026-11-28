@@ -1,0 +1,57 @@
+{
+  "molecules": 250,
+  "spectra": 1184,
+  "ppm": 15,
+  "k": 25,
+  "shared": {
+    "mrr": 0.8913602175602175,
+    "top1": 0.836,
+    "top10": 0.976,
+    "top25": 0.992
+  },
+  "legacy": {
+    "mrr": 0.8913602175602175,
+    "top1": 0.836,
+    "top10": 0.976,
+    "top25": 0.992
+  },
+  "changed_molecules": 0,
+  "ranking_delta": 0.0,
+  "historical_e002_mrr": 0.8789,
+  "legacy_minus_historical": 0.012460217560217535,
+  "conclusion": "Ranking policy comparison measured; the remaining historical difference is not established without the original environment/reference.",
+  "protocol": {
+    "validation_library": "enveda-np-examples",
+    "reference_excludes": [
+      "enveda-np-examples"
+    ],
+    "max_ref_per_structure": 50,
+    "shared_ranking": "cosine, then n_spectra for ties",
+    "legacy_ranking": "cosine + 0.001 * log1p(n_spectra)"
+  },
+  "train_sha256": "9423f90ec08b941a9646b535bf0606183e86ff0c5a297978f5a70693d41bcd98",
+  "reference_source": {
+    "train_sha256": "9423f90ec08b941a9646b535bf0606183e86ff0c5a297978f5a70693d41bcd98",
+    "builder_sha256": "12dad32055288c26ff7d2fdc9fab83ac7c25a83a9f1c1fbcea45d644249b0dd3",
+    "cleaner_sha256": "38103d9a7c5b972edd35cd09cb8e957d3eae5c63f1537087c06179467260962a"
+  },
+  "reference_sha256": {
+    "ref_meta.parquet": "52123206145181b9ec845095e8a33fa0fff1d7846c868e287e96e5c121100cbf",
+    "structures.parquet": "0de54483315efb17f84993b763c0be4bdfdbff4847d7984a182c7e7b9af30939",
+    "ref_peaks.npz": "9c5ec82d071897ba0a76326c587453617c2b02d10736a65d05bfdbe628e4d876"
+  },
+  "source_sha256": {
+    "src.evaluation.validate": "03de0a0c0afd0aada615df9cbeba54a93c645afe4f2348eca3eb2dff0c7379a3",
+    "src.models.base": "a302d69f782daaca049d846dfaddf1e95bf20d2ba9daa609ae5b3aeacd301795",
+    "src.models.library_search": "80bb65d47205b7bad846d561abcac7a8cb0d8784ec7197b7a16f19fca4bb6433",
+    "src.data.build_reference": "12dad32055288c26ff7d2fdc9fab83ac7c25a83a9f1c1fbcea45d644249b0dd3",
+    "src.data.spectra": "38103d9a7c5b972edd35cd09cb8e957d3eae5c63f1537087c06179467260962a"
+  },
+  "candidate_sha256": "8afaa5c9d0a30d87507de379a9d702071ad165d321abfae0647c2a51bf27f479",
+  "machine": "x86_64",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "pyarrow": "23.0.1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "variant": "spectrum",
+    "batch_size": 256,
+    "lr": 0.001,
+    "patience": 3,
+    "seed": 0,
+    "implementation": {
+      "model_mlp": "0e846e60dd6c909486960aa0486625f9864c76de98bb465fea93a91a51d6f991",
+      "src.data.dataset": "94ea52debb275037bdea2a7932676d76b3c55fad0fe24e91b62756b45cff7764",
+      "src.data.spectra": "38103d9a7c5b972edd35cd09cb8e957d3eae5c63f1537087c06179467260962a",
+      "src.features.featurize": "d8263c990114ff796696df229986e13936367057b8dddc9739f30816cc084606"
+    },
+    "split_id": "325f6fd7d6d3eda2f89b61af80c3caf47381a6a651c1f5d121728d57d90a2d59",
+    "cache_sha256": "750a1337620b8a2857e8a5ee5c17d94159fb0cdd6889175ef0ad5a27216dd320"
+  },
+  "epochs": 28,
+  "best_epoch": 25,
+  "best_val_loss": 0.06698037435364533,
+  "elapsed_seconds": 930.9216885566711,
+  "versions": {
+    "torch": "2.14.1+cu130",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "rdkit": "2026.9.2",
+    "pyarrow": "23.0.1"
+  },
+  "hardware": "Tesla T4",
+  "data": {
+    "rows": 736316,
+    "structures": 267026,
+    "train_rows": 699550,
+    "val_rows": 36766
+  },
+  "checkpoint_sha256": "f8ae89d5ea96f8879e2300a3508f793b1cd7ef5dc353eb00741ecd0f0d541d10"
+}

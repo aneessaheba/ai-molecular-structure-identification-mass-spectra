@@ -1,0 +1,266 @@
+[
+  {
+    "path": "members/mrcyrilgoud/final_results/baseline_audit/changed_molecules.csv",
+    "source_path": "baseline_audit/changed_molecules.csv",
+    "drive_url": "https://drive.google.com/file/d/1qm2RKrQJZjrb8-oUNOIIPO2fw7ChvUwX/view?usp=drivesdk",
+    "size": 66,
+    "sha256": "b0f26089729e5f411fe20bf5b453732ef57e3ae4fb450214e5b19dfbdf55bc56",
+    "modified_time": "2026-11-26T02:35:05.702Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E101/history.json",
+    "source_path": "E101/history.json",
+    "drive_url": "https://drive.google.com/file/d/1CfpVJyuqWUEbvrRReZV7QkBcimiDOsHI/view?usp=drivesdk",
+    "size": 2533,
+    "sha256": "d416e5008cf2ccbe497c3339b30a3c5dedc13b0d2078f37df50a156205dd555a",
+    "modified_time": "2026-11-26T00:48:44.043Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/baseline/metrics.json",
+    "source_path": "baseline/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1MJsFzB9XRgZFJ_NzLJ8VOJ-Bix2DuaAi/view?usp=drivesdk",
+    "size": 425,
+    "sha256": "b1ce69409e7702576f4c072aed04c682a1436811e64f343d937fd006434fc40c",
+    "modified_time": "2026-11-26T02:35:07.458Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/baseline_audit/per_molecule.csv",
+    "source_path": "E103/baseline_audit/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1hLizhJPBQS_hFYG3NVC3OmtA9lho112F/view?usp=drivesdk",
+    "size": 8847,
+    "sha256": "49dd9bdd3e6139da6cfbd9dddbb7e8210c73fbe0e3574d46fdfdf8cfc6422bbf",
+    "modified_time": "2026-11-26T07:41:36.281Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/baseline/per_molecule.csv",
+    "source_path": "baseline/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1j8vGwFL_r6kMosFz716ZAXe5oX8hWiMh/view?usp=drivesdk",
+    "size": 6634,
+    "sha256": "9ed1e1266f98092dc56154221d3e72012e0821539a9446a75eedb3c8af03de42",
+    "modified_time": "2026-11-26T02:35:05.744Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/baseline_audit/per_molecule.csv",
+    "source_path": "baseline_audit/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1la1fOER7_vOQY6OKZ4-E5BlAmBpJq_TF/view?usp=drivesdk",
+    "size": 8847,
+    "sha256": "49dd9bdd3e6139da6cfbd9dddbb7e8210c73fbe0e3574d46fdfdf8cfc6422bbf",
+    "modified_time": "2026-11-26T02:35:05.701Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/baseline_audit/audit.json",
+    "source_path": "baseline_audit/audit.json",
+    "drive_url": "https://drive.google.com/file/d/11BZb8Ef5yAU90CZ6C_KZ8bEPjgoKEsSw/view?usp=drivesdk",
+    "size": 2244,
+    "sha256": "a588a456273415c4c39e48e0e09d2073f00eb727314beb963c4c77c81b6632dd",
+    "modified_time": "2026-11-26T02:35:07.355Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/baseline_audit/audit.json",
+    "source_path": "E103/baseline_audit/audit.json",
+    "drive_url": "https://drive.google.com/file/d/1pPfoxzVwr02kpkR3RA1IqySJ8sxp5Ki9/view?usp=drivesdk",
+    "size": 2244,
+    "sha256": "a588a456273415c4c39e48e0e09d2073f00eb727314beb963c4c77c81b6632dd",
+    "modified_time": "2026-11-26T07:41:36.276Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/baseline_audit/changed_molecules.csv",
+    "source_path": "E103/baseline_audit/changed_molecules.csv",
+    "drive_url": "https://drive.google.com/file/d/1KwTu69tkWhoMUJg1BDwF_AZ1RnUsUjpi/view?usp=drivesdk",
+    "size": 66,
+    "sha256": "b0f26089729e5f411fe20bf5b453732ef57e3ae4fb450214e5b19dfbdf55bc56",
+    "modified_time": "2026-11-26T07:41:36.289Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E102/training.json",
+    "source_path": "E102/training.json",
+    "drive_url": "https://drive.google.com/file/d/1wpk5Nnm5sgsBO3qY1T66hEFqHnYLcpDg/view?usp=drivesdk",
+    "size": 1191,
+    "sha256": "5991b38aa1273df88d3e6f4f1471f99d813975a8895c42551b83f85440bbc702",
+    "modified_time": "2026-11-26T07:33:27.935Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/environment.json",
+    "source_path": "environment.json",
+    "drive_url": "https://drive.google.com/file/d/1KzwKLVh7QGhHgTEp_04RWGtRTfFeBXqB/view?usp=drivesdk",
+    "size": 2465,
+    "sha256": "1f7acf9aac93dfcd46de27bbbbb442011f6b2de510b820c355b821d384a7d127",
+    "modified_time": "2026-11-26T02:34:28.442Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/selection.json",
+    "source_path": "E103/selection.json",
+    "drive_url": "https://drive.google.com/file/d/1Tcxcwfpsu2P5AlSkrZGb7wkda7q2Yol-/view?usp=drivesdk",
+    "size": 690,
+    "sha256": "3abbbc5fba4b38bb4cbd0fe7ed99925c5f87475f4f84e5eca299733564f9287c",
+    "modified_time": "2026-11-26T07:41:53.908Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E101/evaluation/per_molecule.csv",
+    "source_path": "E101/evaluation/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1mV_G3pR7W9VO0cwMIjue_EpFRPnJulba/view?usp=drivesdk",
+    "size": 7733,
+    "sha256": "c28bb831d9b3f4ab198aba7c4a7d8297bf442f6a9d16f29dd85e25a68d38b65f",
+    "modified_time": "2026-11-26T00:48:34.552Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E102/history.json",
+    "source_path": "E102/history.json",
+    "drive_url": "https://drive.google.com/file/d/1O_6TskXtliaSmKo-NRGKtrIVZAfrT4pc/view?usp=drivesdk",
+    "size": 2712,
+    "sha256": "b1d109e50efac1e367ef61c83c74713b33def8ae485cc4579a67bede051ad762",
+    "modified_time": "2026-11-26T07:33:43.202Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/blend_curve.csv",
+    "source_path": "E103/blend_curve.csv",
+    "drive_url": "https://drive.google.com/file/d/1mR0dYmb9Z926EnfAfHwOafTyxrVM7RNM/view?usp=drivesdk",
+    "size": 146,
+    "sha256": "91b3763578416eacd9d4f70de419cd5b25693464cf1cac759306686989c69ad3",
+    "modified_time": "2026-11-26T07:41:52.074Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E101/evaluation/metrics.json",
+    "source_path": "E101/evaluation/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1SsKAzZ1rc6Si-WOqSYf81jnYGweJIk2C/view?usp=drivesdk",
+    "size": 685,
+    "sha256": "8113ffd2c53e0010530e143080088afc4abe6e1f1e3082ab8105174a6c12c997",
+    "modified_time": "2026-11-26T00:48:34.672Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E101/training.json",
+    "source_path": "E101/training.json",
+    "drive_url": "https://drive.google.com/file/d/1XFJfu6Ootn8I1scqcWLyQXY7-OEYocOe/view?usp=drivesdk",
+    "size": 1186,
+    "sha256": "1c323db5f7366702086464312273a1498176b4a24916d0d7a77c950a6fdfa351",
+    "modified_time": "2026-11-26T00:48:31.209Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.3/per_molecule.csv",
+    "source_path": "E103/0.3/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1f-NxXy2SBWAPOTKrT7j4oKEeGfppWrbf/view?usp=drivesdk",
+    "size": 6603,
+    "sha256": "a11771676b000c6fb427b4a202b36ae98476c5430df900246354fd2419bd3c95",
+    "modified_time": "2026-11-26T07:41:50.996Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.3/metrics.json",
+    "source_path": "E103/0.3/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1aL0Ug56W48tAdB4km3PDEdt79BmWgnFy/view?usp=drivesdk",
+    "size": 699,
+    "sha256": "c6b681af671ccab19e329592e595b155cb96418c907354b511832b789d286cc5",
+    "modified_time": "2026-11-26T07:41:52.831Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/handoff/results.md",
+    "source_path": "handoff/results.md",
+    "drive_url": "https://docs.google.com/document/d/19b_2YvHCR6O7-HTfOCGFcnaLYF_4n0UZ/edit?usp=drivesdk&ouid=117606972422324213953&rtpof=true&sd=true",
+    "size": 1747,
+    "sha256": "c96b6d1f0db934fbe05d53472773acf608835bc76d04d0ce13c8db0da7fb0fde",
+    "modified_time": "2026-11-26T07:33:44.584Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/blend_curve.png",
+    "source_path": "E103/blend_curve.png",
+    "drive_url": "https://drive.google.com/file/d/1DDxv-6bKsQAHn72pr5XJNDay63Jc63pg/view?usp=drivesdk",
+    "size": 47180,
+    "sha256": "b0645cded6e24403cf2f9fb22005e627e0eaa13583ec720a1c99646674aa0713",
+    "modified_time": "2026-11-26T07:41:52.091Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.2/per_molecule.csv",
+    "source_path": "E103/0.2/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1K12xz-3OfgqBdAwxbw9bJ2p48Tgpf_rP/view?usp=drivesdk",
+    "size": 6636,
+    "sha256": "e7ae11d8028d4890ad65906dca8599d48dc6206eefe93414e20da5deaa230546",
+    "modified_time": "2026-11-26T07:41:49.063Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.2/metrics.json",
+    "source_path": "E103/0.2/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1WLxbEaju_OSublzSvSB0B7ehN9M8ybAR/view?usp=drivesdk",
+    "size": 697,
+    "sha256": "9b743f8f3dc1af74451417108ba9de8610f4504971419d9b449559159ca8a479",
+    "modified_time": "2026-11-26T07:41:50.977Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.1/metrics.json",
+    "source_path": "E103/0.1/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1NuzJu9peymtnQe-v_KXQGOxNcnemPiT9/view?usp=drivesdk",
+    "size": 698,
+    "sha256": "7ce9c9a29cb9c6e864757d6708480012bb1c0c7af341a4b3e2c0a7577759f3cc",
+    "modified_time": "2026-11-26T07:41:50.908Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.1/per_molecule.csv",
+    "source_path": "E103/0.1/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1lAiC_2X2ABet6JpykWFvvIX9iganYrKp/view?usp=drivesdk",
+    "size": 6616,
+    "sha256": "a7780333ec14cc990a0f994e3a75915166f5ec712ae6af2d8dbed86d2f8b7545",
+    "modified_time": "2026-11-26T07:41:47.094Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.5/per_molecule.csv",
+    "source_path": "E103/0.5/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1YPnYFKLqNiPoXLWyPEqrLYWGXgO6nKaA/view?usp=drivesdk",
+    "size": 6618,
+    "sha256": "2a596bae634ecdf855ae4ea92baf14a252c16b83ad9610ae2a746e38f582b6bf",
+    "modified_time": "2026-11-26T07:41:50.906Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E103/0.5/metrics.json",
+    "source_path": "E103/0.5/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1aWY0-W9HwwTID3Ek7Z8XDT3M3mcBEn05/view?usp=drivesdk",
+    "size": 700,
+    "sha256": "0438c56c75ba27e573720e25ccfc5735087dd7085153f1417b9303e460e2ff3a",
+    "modified_time": "2026-11-26T07:41:53.827Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E102/evaluation/per_molecule.csv",
+    "source_path": "E102/evaluation/per_molecule.csv",
+    "drive_url": "https://drive.google.com/file/d/1I5UOz-8ziu4HzOpmuG4u_JZhGsiXVWo-/view?usp=drivesdk",
+    "size": 7487,
+    "sha256": "b763bfa483fc72ac64190ed5f85dfebf7c0f734ebb87246952eba959db3724ca",
+    "modified_time": "2026-11-26T07:33:33.498Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/E102/evaluation/metrics.json",
+    "source_path": "E102/evaluation/metrics.json",
+    "drive_url": "https://drive.google.com/file/d/1PMrMjjbTGIhwQnKfsIBE-JusxMxsyVSS/view?usp=drivesdk",
+    "size": 691,
+    "sha256": "36a976723cc761be3eb72dc8bf97d2d32e1264c66f38146f22200ae054474584",
+    "modified_time": "2026-11-26T07:33:33.637Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/weights/final/E101/best.pt",
+    "source_path": "E101/best.pt",
+    "drive_url": "https://drive.google.com/file/d/1-TRrvpON1Zpf5C1byCwTxtyNyONrUyzN/view?usp=drivesdk",
+    "size": 16698865,
+    "sha256": "f8ae89d5ea96f8879e2300a3508f793b1cd7ef5dc353eb00741ecd0f0d541d10",
+    "modified_time": "2026-11-26T00:47:12.612Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/weights/final/E102/best.pt",
+    "source_path": "E102/best.pt",
+    "drive_url": "https://drive.google.com/file/d/1ltQDMUMN2VyasOWeI2Z4VNyBLdgSIyk8/view?usp=drivesdk",
+    "size": 18796017,
+    "sha256": "0a71ab91df104e762290135962680b2a8e18e391ed816d2d6fdf7a3104adf054",
+    "modified_time": "2026-11-26T07:33:43.816Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/figures/E101_training.png",
+    "source_path": "figures/E101_training.png",
+    "drive_url": "https://drive.google.com/file/d/1h89crUFNfYgdK4k7aj29TRwlEDcvJcpn/view?usp=drivesdk",
+    "size": 51337,
+    "sha256": "2121901b81845c8bbf93d25673066489c64a5492025e3798421c2e76fb2e4675",
+    "modified_time": "2026-11-26T07:33:44.000Z"
+  },
+  {
+    "path": "members/mrcyrilgoud/final_results/figures/E102_training.png",
+    "source_path": "figures/E102_training.png",
+    "drive_url": "https://drive.google.com/file/d/1kg1ionpA7QceBi4NWAWvfRSHAvjjxa7A/view?usp=drivesdk",
+    "size": 53220,
+    "sha256": "59df84fda9209d8e086f8f51148ea6fa16ae88043fb99f6204a4563ca35a2fe4",
+    "modified_time": "2026-11-26T07:33:44.000Z"
+  }
+]

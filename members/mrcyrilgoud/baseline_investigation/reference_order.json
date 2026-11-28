@@ -1,0 +1,16 @@
+{
+  "default": {
+    "mrr": 0.8789759462759463,
+    "top1": 0.816,
+    "top10": 0.98,
+    "top25": 0.992
+  },
+  "stable": {
+    "mrr": 0.9013614163614163,
+    "top1": 0.852,
+    "top10": 0.976,
+    "top25": 0.996
+  },
+  "changed_molecules": 31,
+  "note": "Sensitivity diagnostic only. Final model evaluation uses the shared default ranking."
+}
