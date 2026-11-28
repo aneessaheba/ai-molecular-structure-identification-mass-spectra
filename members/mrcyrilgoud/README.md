@@ -1,6 +1,6 @@
 # Cyril: spectrum → fingerprint MLPs
 
-Both models completed final Colab training on November 25, 2026 (America/Los_Angeles), using 699,550 training spectra and 36,766 spectra for early stopping. Evaluation covers all 250 shared validation molecules. E102 improved standalone MRR@25 over E101 (0.471017 vs 0.418836); the best blend, E102 with alpha 0.2, reached **0.895501**, versus the measured library baseline of **0.891360**. Kaggle execution, uploads, submissions, and screenshots remain pending.
+Both models completed final Colab training on November 25, 2026 (America/Los_Angeles), using 699,550 training spectra and 36,766 spectra for early stopping. Evaluation covers all 250 shared validation molecules. E102 improved standalone MRR@25 over E101 (0.471017 vs 0.418836); the best blend, E102 with alpha 0.2, reached **0.895501**, versus the measured library baseline of **0.891360**. On the Kaggle public leaderboard (team GROUP_PROGRAMMING_01_b, November 27) E103 scored **0.137**, the library baseline 0.135, E102 0.098 and E101 0.089; see [Kaggle results](#kaggle-results). Leaderboard screenshots remain pending.
 
 Final metrics, histories, per-molecule ranks, environment details, and figures have been downloaded from [Drive's final output folder](https://drive.google.com/drive/folders/1BJxOEuvXe0cpuYjxb61mm64zl6jWhqOx) into [final_results/](final_results/). The [download manifest](final_results/download_manifest.json) records each source URL, modification time, byte count, and SHA256. Best checkpoints are stored locally under the git-ignored `weights/final/E101/best.pt` and `weights/final/E102/best.pt`; their hashes match the training and evaluation reports. Existing model notebooks retain their saved outputs and were not edited during this hand-off update. Earlier smoke results remain in [smoke_results.json](smoke_results.json).
 
@@ -69,14 +69,14 @@ At inference, sigmoid probabilities are averaged across the molecule's spectra b
 
 ## Results and hand-off
 
-These are final Colab validation measurements, retrieved directly from Drive. All rows share the same reference, candidate protocol, and 250 validation molecules; these are not Kaggle scores. The historical 0.877–0.8789 figures are not substituted for the measured baseline.
+The MRR and top-k columns are final Colab validation measurements, retrieved directly from Drive. All rows share the same reference, candidate protocol, and 250 validation molecules. The historical 0.877–0.8789 figures are not substituted for the measured baseline. The Kaggle column is the public-leaderboard MRR@25 of team _b's submissions; see [Kaggle results](#kaggle-results).
 
-| Model | MRR@25 | Top-1 | Top-10 | Top-25 | Kaggle |
+| Model | MRR@25 | Top-1 | Top-10 | Top-25 | Kaggle (public) |
 |---|---|---|---|---|---|
-| Library cosine | 0.891360 | 0.836 | 0.976 | 0.992 | Pending |
-| E101 | 0.418836 | 0.260 | 0.756 | 0.884 | Pending |
-| E102 | 0.471017 | 0.296 | 0.812 | 0.908 | Pending |
-| E103 (E102, alpha 0.2) | **0.895501** | **0.844** | **0.980** | **0.996** | Pending |
+| Library cosine | 0.891360 | 0.836 | 0.976 | 0.992 | 0.135 |
+| E101 | 0.418836 | 0.260 | 0.756 | 0.884 | 0.089 |
+| E102 | 0.471017 | 0.296 | 0.812 | 0.908 | 0.098 |
+| E103 (E102, alpha 0.2) | **0.895501** | **0.844** | **0.980** | **0.996** | **0.137** |
 
 **E101 — spectrum MLP.** The 1,000-bin input feeds a 1000 → 1024 → 1024 → 2048 network. Training used all 736,316 eligible cached spectra across 267,026 structures, with 699,550 training and 36,766 early-stopping spectra. It stopped after 28 epochs, selecting epoch 25 (validation BCE 0.066980); recorded training time was 931 seconds on a Tesla T4. See [training report](final_results/E101/training.json) and [validation metrics](final_results/E101/evaluation/metrics.json).
 
@@ -107,13 +107,28 @@ The second notebook exported the [original hand-off report](final_results/handof
 
 **What did not work:** the fully trained standalone MLPs remained well below library cosine: E101 scored 0.418836 and E102 scored 0.471017, versus 0.891360. Richer features helped relative to E101, but did not close that gap. Validation compounds also occur in the reference library through other acquisitions, which favors direct spectral matching; compressing spectra into fingerprint probabilities may also lose discriminative information. These are plausible explanations, not causes isolated by an ablation. The useful outcome is complementary evidence: a small E102 contribution improved validation MRR, while alpha 0.5 reduced it to 0.888956. Earlier two-epoch smoke runs also underperformed and are documented separately in [smoke_results.json](smoke_results.json).
 
-These models only rerank supplied candidates and cannot recover absent structures. No `hide_true` claim is appropriate without candidate expansion. Kaggle scores and actual screenshots still need to be added after offline execution and submission; the hand-off PR also remains outstanding.
+These models only rerank supplied candidates and cannot recover absent structures. No `hide_true` claim is appropriate without candidate expansion. Leaderboard screenshots and the hand-off PR remain outstanding.
+
+### Kaggle results
+
+All four runs were submitted by team GROUP_PROGRAMMING_01_b on November 27, 2026 (America/Los_Angeles), from private Kaggle notebooks run on CPU with internet off. Scores are public-leaderboard MRR@25; the private score is not shown yet. Each submission is logged in [the submission log](../../submissions/submission_log.md).
+
+| Submission | Kaggle notebook (v1) | Public MRR@25 | Local MRR@25 |
+|---|---|---|---|
+| E103 (E102 + cosine, α 0.2) | `mrcyrilgoud/casmi-cyril-e103` | **0.137** | 0.8955 |
+| Library baseline (E002) | `mrcyrilgoud/casmi-cyril-baseline` | 0.135 | 0.8914 |
+| E102 alone | `mrcyrilgoud/casmi-cyril-e102` | 0.098 | 0.4710 |
+| E101 alone | `mrcyrilgoud/casmi-cyril-e101` | 0.089 | 0.4188 |
+
+The leaderboard ranks the four in the same order as local validation, but the scores are far lower: about 6.5 times below their local values for the library methods and 4.8 times below for the MLPs. Local validation contains only Class 1 molecules, while on Kaggle the candidates come only from training structures, so a test molecule whose structure is not in the training set scores 0 under every one of these pipelines. Team _a's identical baseline also scored 0.135. E103's +0.002 over the baseline is inside the leaderboard noise (about ±0.02 with roughly 124 public molecules): E103 and the baseline choose the same top-1 structure for all 400 test molecules and differ only lower in the list. E102 beats E101 by 0.009, the same direction as locally, but also within noise. On November 27 the team's best score, 0.137, ranked 5,544 of 6,173 teams.
 
 ## Offline Kaggle submission
 
 The second training notebook packages `model_mlp.py`, E101/E102 checkpoints, training metadata, blend selection, and checksums into Drive's `kaggle_upload/casmi-cyril-weights`. Upload the folder as a private dataset; no upload or submission happens automatically.
 
 Import `03_kaggle_submission.ipynb`. Attach competition data, `casmi-team-src` from the same shared-code revision as training, your weights dataset, and compatible offline RDKit wheels if needed. Set Internet OFF. Select `EXPERIMENT='E101'`, `'E102'`, or `'E103'` in its configuration cell. If file discovery is ambiguous, set explicit input paths. The notebook verifies packaged checksums, loads CPU weights, builds the reference, writes `/kaggle/working/submission.csv`, and checks IDs and guesses. It never trains or downloads dependencies from the network. Run a fresh saved Kaggle version before submitting and recording its actual score.
+
+The submitted runs attached the datasets `mrcyrilgoud/casmiteamsrc` (shared code, `casmi_src/src/`), `mrcyrilgoud/casmi-cyril-weights` (the packaged folder above) and `tngmai20042005/casmi26-offline-rdkit-2026033` (RDKit 2026.3.3 wheels; Kaggle's image runs Python 3.13, so cp312-only wheel sets fail). The E101 and E102 notebooks are copies of the E103 one with only `EXPERIMENT` changed. The baseline notebook is the repo's unchanged [`kaggle/library_search_baseline`](../../kaggle/library_search_baseline/notebook.ipynb) and needs only the competition data. Each run took 10–13 minutes, mostly building the reference from `train.parquet`. The E101–E103 notebooks check their 400-row `submission.csv` (molecule IDs, 1–25 guesses, RDKit-parsable SMILES); the baseline notebook does not, so its output was checked after download for IDs and guess counts.
 
 ## Local verification
 
@@ -125,4 +140,4 @@ From the repository root with the project requirements installed:
 MPLBACKEND=Agg python -m unittest discover -s members/mrcyrilgoud -p 'test_*.py' -v
 ```
 
-Tests use synthetic spectra and real RDKit fingerprints. They cover feature/loss boundaries, leakage exclusion, cache corruption, decreasing training loss, exact epoch-resume parity, best-checkpoint reload, both scorer variants, candidate ordering, probability aggregation, invalid SMILES, empty candidates, shared evaluation, blend selection ties, artifact packaging, figures, and submission generation. Regression coverage also exercises Drive-only setup and environment-value injection, source-change restart checks, stale metrics/packaging, split/protocol mismatches, and recorded hand-off hyperparameters. Final-setup checks cover real-parquet baseline auditing, the first-50 ordering sensitivity, baseline-context changes, final-stage defaults, and rejection of sampled final caches. An earlier local run reported 26 passing tests. The November 25 audit in the current Python environment did not reproduce a green suite: RDKit was unavailable, causing one test-module import error and two setup subtest failures, and two further subtests require cleared notebook outputs. The existing notebooks retain final run evidence. These software checks are separate from the completed Colab training/validation and do not establish a successful offline Kaggle run.
+Tests use synthetic spectra and real RDKit fingerprints. They cover feature/loss boundaries, leakage exclusion, cache corruption, decreasing training loss, exact epoch-resume parity, best-checkpoint reload, both scorer variants, candidate ordering, probability aggregation, invalid SMILES, empty candidates, shared evaluation, blend selection ties, artifact packaging, figures, and submission generation. Regression coverage also exercises Drive-only setup and environment-value injection, source-change restart checks, stale metrics/packaging, split/protocol mismatches, and recorded hand-off hyperparameters. Final-setup checks cover real-parquet baseline auditing, the first-50 ordering sensitivity, baseline-context changes, final-stage defaults, and rejection of sampled final caches. On November 26, with RDKit installed (Python 3.9.6, RDKit 2025.09.2, PyTorch 2.8.0, NumPy 2.0.2), all 26 tests passed. Notebooks 01 and 02 keep their saved outputs as final-run evidence; the final-stage notebook test allows them but fails if any saved output contains a Kaggle token. These software checks are separate from the completed Colab training/validation and do not establish a successful offline Kaggle run.

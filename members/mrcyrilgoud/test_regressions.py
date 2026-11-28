@@ -91,12 +91,16 @@ class ReviewRegressions(unittest.TestCase):
                 self.assertNotIn('literal-test-secret', output.getvalue())
 
     def test_notebooks_keep_only_single_line_titles_and_no_colab_secrets(self):
-        for name in ('01_fingerprint_mlp.ipynb', '02_losses_metadata_mlp.ipynb', '03_kaggle_submission.ipynb'):
-            with self.subTest(notebook=name):
-                notebook = json.loads((MEMBER / name).read_text())
+        for path in sorted(MEMBER.glob('*.ipynb')):
+            with self.subTest(notebook=path.name):
+                notebook = json.loads(path.read_text())
                 markdown = [cell for cell in notebook['cells'] if cell['cell_type'] == 'markdown']
                 self.assertEqual(len(markdown), 1)
-                self.assertEqual(len(''.join(markdown[0]['source']).strip().splitlines()), 1)
+                title = ''.join(markdown[0]['source']).strip().splitlines()
+                self.assertEqual(len(title), 1)
+                self.assertTrue(title[0].startswith('# '))
+        for name in ('01_fingerprint_mlp.ipynb', '02_losses_metadata_mlp.ipynb', '03_kaggle_submission.ipynb'):
+            with self.subTest(notebook=name):
                 self.assertNotIn('userdata', tagged_cell(name, 'setup'))
         with patch.dict(os.environ, {}, clear=True), patch('getpass.getpass', side_effect=AssertionError('Unexpected prompt')):
             exec(tagged_cell('03_kaggle_submission.ipynb', 'environment'), {})

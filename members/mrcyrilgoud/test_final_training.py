@@ -122,7 +122,9 @@ class FinalTrainingTests(unittest.TestCase):
                 self.assertFalse(namespace['RESUME'])
                 tree_source = ''.join(cells['environment']['source'])
                 self.assertNotIn('KGAT_', tree_source)
-                self.assertTrue(all(not c.get('outputs') for c in nb['cells']))
+                # Saved outputs are the final-run evidence and may stay, but must never hold a token.
+                outputs = json.dumps([c.get('outputs', []) for c in nb['cells']])
+                self.assertFalse('KGAT_' in outputs, 'Saved outputs contain a Kaggle token')  # never echo it
 
 
 if __name__ == '__main__':
