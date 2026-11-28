@@ -7,7 +7,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 0 | Baseline (library cosine) | src/models/library_search.py | 0.877 | 0.816 | 0.968 | 0.000 | 0.135 (public) | E002 |
 | 1 | Model 1: analog + modification enumeration, confidence gate τ=0.7 (submitted) | model_analog_enum.py | 0.861 | 0.804 | 0.944 | 0.207 | 0.130 (public, below baseline) | E711 (plain: E701) |
-| 2 | Model 2: spectrum to SELFIES transformer | model_smiles_transformer.py | not run | not run | not run | 0.034 | not submitted | E702 |
+| 2 | Model 2: spectrum to SELFIES transformer | model_smiles_transformer.py | not run | not run | not run | 0.034 | pending (ref 59047225) | E702 |
 | 3 | Model 3 | not done (optional, skipped) | | | | | | |
 
 Local numbers are on the 250 held-out validation molecules. hide_true removes the true structure from the library, so the baseline scores 0.000 by design and only generated candidates can score.
@@ -45,4 +45,4 @@ _Left: normal vs hidden-true MRR for the baseline and both models. Middle: Model
 ## Kaggle evidence
 Screenshots in `results/leaderboard_evidence/`:
 - Model 1 (submission ref 59039219, "E711 analog enumeration gate 0.7"): submitted 28 Nov 2026. Public score **0.130**, below the baseline's 0.135. The screenshot still needs to be added to `results/leaderboard_evidence/`.
-- Model 2: not submitted to Kaggle yet. A submission needs team approval first (see the submission log).
+- Model 2 (submission ref 59047225, "E702 spectrum-to-SELFIES transformer"): submitted 28 Nov 2026 from kernel `casmi-yash-model2-submit` v1. The public score is pending at the time of writing. The screenshot still needs to be added to `results/leaderboard_evidence/`.
